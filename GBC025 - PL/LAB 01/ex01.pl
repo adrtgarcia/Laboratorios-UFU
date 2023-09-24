@@ -34,21 +34,21 @@ irmaos(X, Y) :-
     gerou(Z, X), gerou(Z, Y), X \= Y.
 
 irma(X, Y) :- 
-    irmãos(X, Y), mulher(X);
-    irmãos(Y, X), mulher(X).
+    irmaos(X, Y), mulher(X);
+    irmaos(Y, X), mulher(X).
 
 irmao(X, Y) :- 
-    irmãos(X, Y), homem(X);
-    irmãos(Y, X), homem(X).
+    irmaos(X, Y), homem(X);
+    irmaos(Y, X), homem(X).
 
 tio(X, Y) :- 
-    irmão(X, Z), gerou(Z, Y).
+    irmao(X, Z), gerou(Z, Y).
 
 tia(X, Y) :- 
-    irmã(X, Z), gerou(Z, Y).
+    irma(X, Z), gerou(Z, Y).
 
 avô(X, Y) :- 
     pai(X, Z), gerou(Z, Y).
 
 avó(X, Y) :- 
-    mãe(X, Z), gerou(Z, Y).
+    mae(X, Z), gerou(Z, Y).
