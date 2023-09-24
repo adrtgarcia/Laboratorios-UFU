@@ -1,25 +1,25 @@
 homem(ivo).
 homem(gil).
-homem(noé).
+homem(noe).
 homem(ari).
-homem(raí).
+homem(rai).
 
 mulher(ana).
 mulher(bia).
 mulher(eva).
-mulher(clô).
+mulher(clo).
 mulher(lia).
 mulher(gal).
 
 gerou(ana, eva).
 gerou(ivo, eva).
-gerou(eva, noé).
-gerou(raí, noé).
-gerou(bia, raí).
-gerou(bia, clô).
+gerou(eva, noe).
+gerou(rai, noe).
+gerou(bia, rai).
+gerou(bia, clo).
 gerou(bia, ari).
-gerou(gil, raí).
-gerou(gil, clô).
+gerou(gil, rai).
+gerou(gil, clo).
 gerou(gil, ari).
 gerou(ari, gal).
 gerou(lia, gal).
@@ -27,17 +27,17 @@ gerou(lia, gal).
 pai(X, Y) :- 
     homem(X), gerou(X, Y).
 
-mãe(X, Y) :- 
+mae(X, Y) :- 
     mulher(X), gerou(X, Y).
 
-irmãos(X, Y) :-
+irmaos(X, Y) :-
     gerou(Z, X), gerou(Z, Y), X \= Y.
 
-irmã(X, Y) :- 
+irma(X, Y) :- 
     irmãos(X, Y), mulher(X);
     irmãos(Y, X), mulher(X).
 
-irmão(X, Y) :- 
+irmao(X, Y) :- 
     irmãos(X, Y), homem(X);
     irmãos(Y, X), homem(X).
 
