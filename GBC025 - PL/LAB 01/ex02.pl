@@ -1,23 +1,23 @@
-estuda(fabricio, programação).
-estuda(joana, lógica).
+estuda(fabricio, programacao).
+estuda(joana, logica).
 estuda(ana, tcc).
-estuda(josé, banco).
+estuda(jose, banco).
 estuda(lucas, estrutura).
-estuda(nicolas, lógica).
+estuda(nicolas, logica).
 estuda(fernanda, tcc).
 estuda(maria, tcc).
 
 aluno(fabricio, ufmg).
 aluno(joana, ufu).
 aluno(ana, ufu).
-aluno(josé, ufu).
+aluno(jose, ufu).
 aluno(lucas, ufmg).
 aluno(nicolas, ufu).
 aluno(fernanda, ufu).
 aluno(maria, ufu).
 
-professor(joão, programação).
-professor(clara, lógica).
+professor(joao, programacao).
+professor(clara, logica).
 professor(roberta, tcc).
 professor(antonio, banco).
 professor(leandro, estrutura).
@@ -25,8 +25,8 @@ professor(leandro, estrutura).
 reitor(beatriz, ufmg).
 reitor(marcos, ufu).
 
-oferta(bcc, programação).
-oferta(bcc, lógica).
+oferta(bcc, programacao).
+oferta(bcc, logica).
 oferta(si, tcc).
 oferta(si, banco).
 oferta(bcc, estrutura).
