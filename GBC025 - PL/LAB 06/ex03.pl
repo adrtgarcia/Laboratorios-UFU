@@ -1,4 +1,4 @@
-% soma(Lista, S).
+% soma(Lista, Soma).
 soma([X], X).
 soma([A|B], S) :-
     soma(B, S1),
