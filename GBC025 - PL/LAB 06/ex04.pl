@@ -1,4 +1,4 @@
-% max(Lista, M).
+% max(Lista, Máximo).
 maior([X], X).
 maior([A|B], M) :-
     maior(B, MAIOR),
