@@ -1,4 +1,4 @@
-% último(l)
+% último(Lista).
 ultimo([U]) :-
     write(U).
 
