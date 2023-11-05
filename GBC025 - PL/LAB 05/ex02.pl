@@ -20,7 +20,6 @@ livro(nome('Redes de Computadores'), autor('Tanenbaum'), pal_chave([redes, compu
 % ?- livro(nome('C completo e total'), _, pal_chave(X)).
 
 % encontre o nome do autor e o nome do livro, dada uma palavra-chave
-% ?- livro(nome(X), autor(Y), pal_chave([linguagemc, _, _])).
 
 verifica(PalavraChave, [PalavraChave|_]).
 
@@ -30,3 +29,15 @@ verifica(PalavraChave, [_|Tail]) :-
 busca_palavrachave(PalavraChave, Autor, Nome) :-
     livro(nome(Nome), autor(Autor), pal_chave(ListaPC)),
     verifica(PalavraChave, ListaPC).
+
+% encontre livros que têm pelo menos uma das palavras-chave fornecidas
+
+busca_palavrachave(ListaPC, Nome, Autor) :-
+    livro(nome(Nome), autor(Autor), pal_chave(PCs),
+    comum(ListaPC, PCs).
+
+comum([Palavra|_], PCs) :-
+    member(Palavra, PCs).
+
+comum([_|Tail], PCs) :-
+    comum(Tail, PCs).
