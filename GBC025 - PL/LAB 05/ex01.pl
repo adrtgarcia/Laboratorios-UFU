@@ -12,6 +12,10 @@ estrada(8, e, f).
 rota(A, B, estrada(R, A, B)) :-
   estrada(R, A, B).
 
+rota(A, B, [estrada(R, A, Intermediario) | Tail]) :-
+  estrada(R, A, Intermediario,
+  rota(Intermediario, B, Tail).
+
 % rotac(R, A).
 rotac(estrada(R, X, A), A) :-
   estrada(R, X, A).
