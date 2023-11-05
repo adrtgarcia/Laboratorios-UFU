@@ -22,12 +22,11 @@ livro(nome('Redes de Computadores'), autor('Tanenbaum'), pal_chave([redes, compu
 % encontre o nome do autor e o nome do livro, dada uma palavra-chave
 % ?- livro(nome(X), autor(Y), pal_chave([linguagemc, _, _])).
 
-busca_palavrachave(ListaPalavras, Nome, Autor) :-
-    livro(nome(Nome), autor(Autor), pal_chave(PalavrasChave)),
-    verifica_palavrachave(ListaPalavras, PalavrasChave).
+verifica(PalavraChave, [PalavraChave|_]).
 
-verifica_palavrachave([Palavra|_], PalavrasChave) :-
-    member(Palavra, PalavrasChave).
+verifica(PalavraChave, [_|Tail]) :-
+    verifica(PalavraChave, Tail).
 
-verifica_palavrachave([_|Tail], PalavrasChave) :-
-    verifica_palavrachave(Tail, PalavrasChave).
+busca_palavrachave(PalavraChave, Autor, Nome) :-
+    livro(nome(Nome), autor(Autor), pal_chave(ListaPC)),
+    verifica(PalavraChave, ListaPC).
