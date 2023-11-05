@@ -1,4 +1,4 @@
-% tam(Lista, N).
+% tam(Lista, Tamanho).
 tam([_], 1).
 tam([_|X], N) :-
     tam(X, N1),
