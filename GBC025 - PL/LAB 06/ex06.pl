@@ -1,4 +1,4 @@
-% retiraElemento(Elem, L1, L2)
+% retiraElemento(Elemento, Lista1, Lista2).
 
 retiraElemento(_, [], []).
 
