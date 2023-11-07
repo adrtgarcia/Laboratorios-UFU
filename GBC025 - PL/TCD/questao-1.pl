@@ -137,3 +137,11 @@ irmao(X, Y) :-
 % sim.
 irma(X, Y) :-
 	feminino(X), progenitor(Z, X), progenitor(Z, Y), X \= Y.
+
+% quem é avô/avó de luciano?
+% 
+---
+
+% quem tem netos na família pinheiro?
+% 
+---
