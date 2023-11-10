@@ -70,7 +70,7 @@ irmao(X, Y) :-
 descendente(X, Y) :-
 	progenitor(Y, X).
 descendente(X, Y) :-
-	progenitor(X, Z), progenitor(Z, Y).
+	progenitor(Z, Y), descendente(X, Z).
 
 
 % mae(X, Y) : X é mãe de Y
