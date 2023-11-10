@@ -40,3 +40,18 @@ rota(A, B, [estrada(R, A, Intermediario) | L], C) :-
 
 % LETRA C ----------------------------------------
 
+rotaC([estrada(R, _, A, C)], A, C) :-
+    estrada(R, _, A, C).
+
+
+% LETRA D ----------------------------------------
+
+rotaS([estrada(R, A, _, C)], A, C) :-
+    estrada(R, A, _, C).
+
+
+% LETRA E ----------------------------------------
+
+rotaM([estrada(R, _, B, M)], B, C) :-
+    estrada(R, _, B, M),
+    M < C.
