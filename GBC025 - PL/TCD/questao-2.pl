@@ -1,13 +1,12 @@
 % LETRA A ----------------------------------------
 % L2 é a lista L1 com o elemento X
 
-adiciona(X, L1, L2) :-
-  //
+adiciona(X, L1, [X|L1]).
 
 % LETRA B ----------------------------------------
 % L2 é a lista L1 sem o elemento X
 
-apaga(X, L1, L2) :– 
+apaga(X, [X|L2], L2) :– 
   //
 
 % LETRA C ----------------------------------------
