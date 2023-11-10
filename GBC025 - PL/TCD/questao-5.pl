@@ -1,27 +1,42 @@
 % LETRA A ----------------------------------------
 
 % estrada(identificador, origem, destino, custo).
+estrada(a, cidadeB, cidadeA, 150).
+estrada(b, cidadeA, cidadeB, 90).
+estrada(c, cidadeB, cidadeC, 211).
+estrada(d, cidadeG, cidadeA, 300).
+estrada(e, cidadeB, cidadeD, 50).
+estrada(f, cidadeB, cidadeE, 89).
+estrada(g, cidadeA, cidadeG, 187).
+estrada(h, cidadeD, cidadeH, 254).
+estrada(i, cidadeF, cidadeI, 621).
+estrada(j, cidadeC, cidadeJ, 300).
+estrada(k, cidadeI, cidadeJ, 41).
+estrada(l, cidadeD, cidadeL, 99).
+estrada(m, cidadeH, cidadeM, 148).
+estrada(n, cidadeP1, cidadeM, 163).
+estrada(o, cidadeP1, cidadeN, 69).
+estrada(p, cidadeP2, cidadeL, 10).
+estrada(q, cidadeJ, cidadeL, 364).
+estrada(r, cidadeR, cidadeL, 79).
+estrada(s, cidadeL, cidadeO, 193).
+estrada(t, cidadeP2, cidadeP1, 311).
+estrada(u, cidadeP2, cidadeR, 577).
+estrada(v, cidadeN, cidadeP1, 150).
+estrada(x, cidadeA, cidadeD, 100).
+estrada(semId, cidadeL, cidadeN, 0).
 
-estrada(a, cb, ca, 150).
-estrada(b, ca, cb, 90).
-estrada(c, cb, cc, 211).
-estrada(d, cg, ca, 300).
-estrada(e, cb, cd, 50).
-estrada(f, cb, ce, 89).
-estrada(g, ca, cg, 187).
-estrada(h, cd, ch, 254).
-estrada(i, cf, ci, 621).
-estrada(j, cc, cj, 300).
-estrada(k, ci, cj, 41).
-estrada(l, cd, cl, 99).
-estrada(m, ch, cm, 148).
-estrada(n, cp, cm, 163).
-estrada(o, cp, cn, 69).
-estrada(p, cp, cl, 10).
-estrada(q, cj, cl, 364).
-estrada(r, cr, cl, 79).
-estrada(s, cl, co, 193).
-estrada(t, cp, cp, 311).
-estrada(u, cp, cr, 577).
-estrada(v, cn, cp, 150).
-estrada(x, ca, cd, 100).
+
+% LETRA B ----------------------------------------
+
+rota(A, B, estrada(R, A, B), C) :-
+    estrada(R, A, B, C).
+
+rota(A, B, [estrada(R, A, Intermediario) | L], C) :-
+    estrada(R, A, Intermediario, C1),
+    rota(Intermediario, B, L, C2),
+    C is C1 + C2.
+
+
+% LETRA C ----------------------------------------
+
