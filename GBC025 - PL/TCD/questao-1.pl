@@ -71,8 +71,8 @@ pai(X, Y) :-
 	masculino(X), progenitor(X, Y).
 
 % avo(X, Y) : X é avô de Y
-avo(X, Y) :-
-	pai(X, Z), pai(Z, Y).
+avô(X, Y) :-
+	pai(X, Z), (pai(Z, Y) ; mae(Z, Y)).
 
 % tio(X, Y) : X é tio de Y
 tio(X, Y) :-
@@ -82,49 +82,58 @@ tio(X, Y) :-
 primo(X, Y) :-
 	masculino(X), progenitor(Z, X), (irmao(Z, W) ; irma(Z, W)), progenitor(W, Y).
 
+
 % LETRA C ----------------------------------------
 
-% joão é filho de josé? 
+% (1) joão é filho de josé? 
 filho(X, Y) :-
 	progenitor(Y, X).
 % ?- filho(joao, jose).
 % sim.
 
-% quem são os filhos de maria?
+% (2) quem são os filhos de maria?
 filho(X, Y) :-
 	progenitor(Y, X).
 % ?- filho(X, maria).
 % joão, ana, jéssica, lucas.
 
-% quem são os primos do mário?
+% (3) quem são os primos do mário?
 primos(X, Y) :-
     progenitor(Z, X), (irmao(Z, W) ; irma(Z, W)), progenitor(W, Y).
 % ?- primos(X, mario).
 % helena, joana, heloísa, fagundes, márcia, júlio.
 
-% quantos são os sobrinhos/sobrinhas com um tio da família pinheiro?
-% regra
-% ?- 
-% 
+% (4) quantos são os sobrinhos/sobrinhas com um tio da família pinheiro?
+sobrinhos(T, N) :-
+    setof(Sobrinhos, tio(T, Sobrinhos), L),
+    length(L, N).
+% ?- sobrinhos(joao, N1); sobrinhos(lucas, N2); sobrinhos(mario, N3); sobrinhos(fagundes, N4); sobrinhos(julio, N5).
+% joão tem 6, lucas tem 4, mário tem 0, fagundes tem 1 e júlio tem 1.
 
-% quem são os ascendentes do carlos?
-% 
----
+% (5) quem são os ascendentes do carlos?
+ascendente(X, Y) :- 
+    progenitor(X, Y).
+ascendente(X, Y) :- 
+    progenitor(X, Z), ascendente(Z, Y).
+% ?- ascendente(X, carlos).
+% mario, helena, joão, ana, josé.
 
-% helena tem irmãos?
+% (6) helena tem irmãos?
+% ?- irmao(X, helena).
 % não.
-irmao(X, Y) :-
-	masculino(X), progenitor(Z, X), progenitor(Z, Y), X \= Y.
 
-% helena tem irmãs?
-% sim.
-irma(X, Y) :-
-	feminino(X), progenitor(Z, X), progenitor(Z, Y), X \= Y.
+% (6) helena tem irmãs?
+% ?- irma(X, helena).
+% sim, joana.
 
-% quem é avô/avó de luciano?
-% 
----
+% (7) quem é avô/avó de luciano?
+% ?- avô(X, luciano) ; avó(Y, luciano).
+% lucas.
 
-% quem tem netos na família pinheiro?
-% 
----
+% (8) quem tem netos na família pinheiro?
+avó(X, Y) :-
+    mae(X, Z), (pai(Z, Y) ; mae(Z, Y)).
+netos(X, Y) :-
+    avô(Y, X) ; avó(Y, X).
+% ?- netos(_, Y).
+% josé, joão, lucas, maria, ana
