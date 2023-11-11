@@ -70,7 +70,7 @@ mae(X, Y) :-
 pai(X, Y) :-
 	masculino(X), progenitor(X, Y).
 
-% avo(X, Y) : X é avô de Y
+% avô(X, Y) : X é avô de Y
 avô(X, Y) :-
 	pai(X, Z), (pai(Z, Y) ; mae(Z, Y)).
 
@@ -127,12 +127,12 @@ ascendente(X, Y) :-
 % sim, joana.
 
 % (7) quem é avô/avó de luciano?
+avó(X, Y) :-
+    mae(X, Z), (pai(Z, Y) ; mae(Z, Y)).
 % ?- avô(X, luciano) ; avó(Y, luciano).
 % lucas.
 
 % (8) quem tem netos na família pinheiro?
-avó(X, Y) :-
-    mae(X, Z), (pai(Z, Y) ; mae(Z, Y)).
 netos(X, Y) :-
     avô(Y, X) ; avó(Y, X).
 % ?- netos(_, Y).
