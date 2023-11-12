@@ -1,6 +1,6 @@
 % aluno(Nome, Disciplina, Nota).
 aluno(ana, calculo, 10).
-aluno(joão, logica, 8).
+aluno(joao, logica, 8).
 aluno(maria, programacao, 9).
 aluno(pedro, programacao, 7).
 aluno(carolina, calculo, 9).
@@ -26,22 +26,22 @@ professor(marcos, programacao, 3).
 professor(aline, calculo, 1).
 
 % nota(NomeAluno, Disciplina, Valor).
-nota(N, D, V) :-
-    aluno(N, D, NOTA),
-    professor(_, D, PESO),
-    V is NOTA * PESO / 5.
+nota(Nome, Disciplina, Valor) :-
+    aluno(Nome, Disciplina, Nota),
+    professor(_, Disciplina, Peso),
+    Valor is Nota * Peso / 5.
 
 % maiorNota(Disciplina, NomeAluno).
 maiorNota(Disciplina, NomeAluno) :-
-    aluno(NomeAluno, Disciplina, Nota),
-    \+ (aluno(_, Disciplina, OutraNota), OutraNota > Nota).
+    aluno(NomeAluno, Disciplina, N1),
+    \+ (aluno(_, Disciplina, N2), N2 > N1).
 
 % menorNota(Disciplina, NomeAluno).
 menorNota(Disciplina, NomeAluno) :-
-    aluno(NomeAluno, Disciplina, Nota),
-    \+ (aluno(_, Disciplina, OutraNota), OutraNota < Nota).
+    aluno(NomeAluno, Disciplina, N1),
+    \+ (aluno(_, Disciplina, N2), N2 < N1).
 
 % mairNotaGeral(NomeAluno).
 maiorNotaGeral(NomeAluno) :-
-    aluno(NomeAluno, _, Nota),
-    \+ (aluno(_, _, OutraNota), OutraNota > Nota).
+    aluno(NomeAluno, _, N1),
+    \+ (aluno(_, _, N2), N2 > N1).
