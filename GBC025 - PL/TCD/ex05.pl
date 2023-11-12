@@ -29,10 +29,10 @@ estrada(semId, cidadeL, cidadeN, 0).
 
 % LETRA B ----------------------------------------
 
-rota(A, B, estrada(R, A, B), C) :-
+rota(A, B, estrada(R, A, B, C), C) :-
     estrada(R, A, B, C).
 
-rota(A, B, [estrada(R, A, Intermediario) | L], C) :-
+rota(A, B, [estrada(R, A, Intermediario, C) | L], C) :-
     estrada(R, A, Intermediario, C1),
     rota(Intermediario, B, L, C2),
     C is C1 + C2.
