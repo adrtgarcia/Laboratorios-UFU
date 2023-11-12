@@ -1,4 +1,5 @@
 % soma dos n primeiro números: s(num, resultado).
+
 s(1, 1).
 
 s(N, X) :-
