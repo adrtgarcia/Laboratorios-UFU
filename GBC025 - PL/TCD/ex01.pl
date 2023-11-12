@@ -92,8 +92,6 @@ filho(X, Y) :-
 % sim.
 
 % (2) quem são os filhos de maria?
-filho(X, Y) :-
-	progenitor(Y, X).
 % ?- filho(X, maria).
 % joão, ana, jéssica, lucas.
 
