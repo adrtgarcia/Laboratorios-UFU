@@ -14,7 +14,7 @@ area(paisE, 5).
 area(paisF, 3).
 area(paisG, 4).
 
-% densidade(X, Y) : Y é a densidade demográfica Y do país X.
+% densidade(X, Y) : Y é a densidade demográfica do país X.
 densidade(X, Y) :-
     populacao(X, Populacao),
     area(X, Area),
