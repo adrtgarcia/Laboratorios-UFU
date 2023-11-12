@@ -1,10 +1,8 @@
-% pai(X, Y) : X é pai de Y
 pai(jose, lucio).
 pai(joao, luciano).
 pai(mario, fabricio).
 pai(mario, lucas).
 
-% mae(X, Y) : X é mãe de Y
 mae(maria, luciano).
 mae(ana, lucia).
 mae(joana, murilo).
