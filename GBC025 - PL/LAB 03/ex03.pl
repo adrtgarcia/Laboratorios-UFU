@@ -1,6 +1,6 @@
 % mdc (num1, num2, resultado)
 
-mdc (X, X, X).
+mdc(X, X, X).
 
 mdc(X, Y, Z) :-
     X > Y,
