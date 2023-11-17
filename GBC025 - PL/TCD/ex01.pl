@@ -114,7 +114,7 @@ ascendente(X, Y) :-
 ascendente(X, Y) :- 
     progenitor(X, Z), ascendente(Z, Y).
 % ?- ascendente(X, carlos).
-% mario, helena, joão, ana, josé.
+% mario, helena, joão, ana, josé, maria.
 
 % (6) helena tem irmãos?
 % ?- irmao(X, helena).
@@ -134,4 +134,4 @@ avó(X, Y) :-
 netos(X, Y) :-
     avô(Y, X) ; avó(Y, X).
 % ?- netos(_, Y).
-% josé, joão, lucas, maria, ana
+% josé, joão, lucas, maria, ana.
