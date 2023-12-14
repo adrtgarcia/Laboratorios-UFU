@@ -1,4 +1,4 @@
-library ieee;
+library ieee; 
 use ieee.std.logic_1164.all;
 
 entity portaE is
