@@ -38,9 +38,9 @@ public class Tempo {
 	}
 	
 	public void TempoT (Tempo t) {
-		hora = validaHora(t.getHora);
-		minuto = validaMinSeg(t.getMinuto);
-		segundo = validaMinSeg(t.getSegundo);
+		hora = validaHora(t.getHora());
+		minuto = validaMinSeg(t.getMinuto());
+		segundo = validaMinSeg(t.getSegundo());
 	}
 	
 	public void PrintaT (Tempo t) {
