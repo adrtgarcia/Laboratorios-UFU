@@ -1,8 +1,3 @@
-// NOME: AMANDA DUARTE GARCIA
-// MATRÍCULA: 12221BCC031
-
-// OBS: TABELA ESTÁ NA PASTA DO CÓDIGO
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
