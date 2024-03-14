@@ -1,11 +1,3 @@
-// NOME: AMANDA DUARTE GARCIA
-// MATRÍCULA: 12221BCC031
-
-// NOME: CAIKE CESAR MOTA DE ARAUJO
-// MATRÍCULA: 12221BCC030
-
-// OBS: EXERCÍCIO 1 E TABELA ESTÃO NA PASTA DO CÓDIGO
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
