@@ -11,7 +11,7 @@ col:	.word	16
 	move	$t2, $zero      	# $t2 = valor
 	
 loop:    
-	mul	$s0, $t1	        # $s2 = i * colunas
+	mult	$s0, $t1	        # $s2 = i * colunas
 	mflo	$s2
 	add	$s2, $s2, $s1	        # $s2 += j
 	sll	$s2, $s2, 2	        # $s2 *= 4
