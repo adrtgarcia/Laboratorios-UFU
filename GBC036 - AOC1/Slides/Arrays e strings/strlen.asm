@@ -28,6 +28,6 @@ fim:
 	syscall				        # imprime a string msg2
 	li   $v0, 1
 	add  $a0, $zero, $t2
-	syscall				                        # imprime o tamanho
+	syscall				        # imprime o tamanho
 	li   $v0, 10
-	syscall				                        # exit
+	syscall				        # exit
