@@ -1,8 +1,8 @@
 	.data						           # declarando dados
-array:		 .word	1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-n:		 .word	10				           # tamanho do vetor
-soma:		 .word	0				           # resultado da soma
-msg:		 .ascii	"resultado: "
+array:		.word	1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+n:		.word	10				           # tamanho do vetor
+soma:		.word	0				           # resultado da soma
+msg:		.ascii	"resultado: "
 
 	.text
 	.globl main
