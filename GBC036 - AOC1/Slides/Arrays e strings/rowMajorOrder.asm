@@ -5,7 +5,7 @@ col:	.word	16
 
 	.text
 	lw	$t0, lin	        # $t0 = número de linhas
-	lw	$t1, col	        # $t0 = número de colunas
+	lw	$t1, col	        # $t1 = número de colunas
 	move	$s0, $zero      	# i <- 0
 	move	$s1, $zero      	# j <- 0
 	move	$t2, $zero      	# $t2 = valor
