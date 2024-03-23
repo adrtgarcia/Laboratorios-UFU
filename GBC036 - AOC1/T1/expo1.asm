@@ -1,6 +1,6 @@
 # P1 - potenciação, fragmento 1
 
-	  .data			    # declarar variáveis
+	.data			    # declarar variáveis
 x:	.word	2		    # defina aqui o valor de x (base)
 n:	.word	3		    # defina aqui o valor de n (expoente)
 result:	.word	1		    # resultado começa em 1 (fator nulo da multiplicação)
