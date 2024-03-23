@@ -17,8 +17,8 @@ main:
      	mov.s  	$f3, $f0		# $f3 = c
      
      	mtc1   	$zero, $f5		# (fpu) $f5 = 0
-     	c.eq.s  0, $f1, $f5		# if (a == 0) ???
-     	bc1t  	fim         		# if (a == 0) encerra o programa 
+     	c.eq.s  0, $f1, $f5		# if (a == 0) flag = 0
+     	bc1t  	fim         		# if (flag == 0) encerra o programa 
      
      	mul.s   $f0, $f2, $f2   	# b^2
      
@@ -29,64 +29,62 @@ main:
      					# delta = b*b - 4*a*c:
      	sub.s   $f0, $f0, $f4   	# $f0 = delta
      
-     	c.lt.s 	$f0, $f5   		# Compare $f0 (delta) com 0
-     	bc1t complexo     		# Branch para complexo se a condição for verdadeira (delta < 0)
+     	c.lt.s 	$f0, $f5   		# if (delta < 0) flag = 0
+     	bc1t complexo     		# if (flag == 0) pula para a função complexo
      
-     	sqrt.s  $f6,$f0     		#raiz quadrada de delta está em f6
-     	sub.s   $f2, $f5, $f2   	#f2 = 0-b, portanto f2 é -b
+     	sqrt.s  $f6,$f0     		# $f6 = raiz quadrada de delta
+     	sub.s   $f2, $f5, $f2   	# $f2 = -b
      
-     					#A partir daqui, precisa fazer as comparações para regra da tumba
+     					# comparações para regra da tumba:     
+     					# comparar b^2 > ac e b>0 para utilizar R1 com forma SEGURA e R2 com TRADICIONAL
+     	mul.s   $f13, $f3, $f1		# $f13 = c * a
+     	add.s   $f9, $f1, $f1     	# $f9 = 2a
+     	add.s   $f14, $f3, $f3    	# $f14 = 2c
      
-     					#Comparar b^2 > ac e b>0 para utilizar R1 COM forma SEGURA E R2 COM TRADICIONAL
-     	mul.s   $f13, $f3, $f1
-     	add.s   $f9,$f1,$f1     	#mesma coisa que multiplicar A por 2, em f9 está 2a
-     	add.s   $f14,$f3,$f3    	#mesma coisa que multiplicar C por 2, em f14 está 2C
-     
-     	c.le.s  $f13, $f2   		#ac <= bc
-     	bc1t    segundo_metodo
-     	j       primeiro_metodo
+     	c.le.s  $f13, $f2   		# if (ac <= bc) ??? quando que $f2 virou bc? 
+     	bc1t    segundo_metodo		# if (flag == 0) pula para a função segundo método
+     	j       primeiro_metodo		# else pula para a função primeiro método
      
 segundo_metodo:
-     	add.s   $f7,$f2,$f6     	#-b + raiz de delta
-     	div.s   $f16,$f7,$f9    	#coloca em f7 a divisao por 2a, (-b+sqrt(b2-4ac))/2a PORTANTO AQUI ESTÁ R1 COM A FORMA TRADICIONAL
-     	div.s   $f15,$f14,$f7   	#coloca em f15: PORTANTO AQUI ESTÁ R2 COM A FORMA SEGURA
+     	add.s   $f7, $f2, $f6     	# $f7 = -b + raiz de delta
+     	div.s   $f16, $f7, $f9    	# $f16 = $f7 / 2a (R1 TRADICIONAL)
+     	div.s   $f15, $f14, $f7   	# $f15 = 2c / $f7 (R2 FORMA SEGURA)
      
-     	j imprimir_resultado
+     	j 	imprimir_resultado	# jump para a impressão resultado
     
 primeiro_metodo:
-     	sub.s   $f7,$f2,$f6     	#-b - raiz de delta
-     	div.s   $f16,$f14,$f7   	#coloca em f16 a divisão: 2C/-b-delta PORTANTO EM F7 ESTÁ O VALOR DA RAIZ 1 DE FORMA SEGURA
-     	div.s   $f15,$f7,$f9    	#coloca em f15 a divisao de f7 e f9
+     	sub.s   $f7, $f2, $f6     	# $f7 = -b - raiz de delta
+     	div.s   $f16, $f14, $f7   	# $f16 = 2c / $f7 (R1 FORMA SEGURA)
+     	div.s   $f15, $f7, $f9    	# $f15 = $f7 / 2a (R2 TRADCIONAL ???)
      
 imprimir_resultado:
-     					# Chamadas de função para imprimir os resultados
      	print_str "x1: "
-     	mov.s   $f12, $f16   		# Valor a ser impresso em x1
-     	print_float($f12)
+     	mov.s   $f12, $f16   		# $f2 = x1
+     	print_float($f12)		# imprime x1
      	print_str "\n"
 
      	print_str "x2: "
-     	mov.s   $f12, $f15   		# Valor a ser impresso em x2
-     	print_float($f12)
+     	mov.s   $f12, $f15   		# $f12 = x2
+     	print_float($f12)		# imprime x2
      	print_str "\n"
-     	j fim
+     	j 	fim			# jump para o fim do programa
 
 complexo:
-     	abs.s   $f0, $f0
-     	sqrt.s  $f6,$f0     		#sqrt(abs(b2-4ac))
-     	sub.s   $f2, $f5, $f2
-     	add.s   $f9,$f1,$f1     	#2*a
-     	div.s   $f7,$f2,$f9     	#(-b)/2a
-     	div.s   $f8,$f6,$f9     	#(sqrt(abs(b2-4ac)))/2a
+     	abs.s   $f0, $f0		# ???
+     	sqrt.s  $f6,$f0     		# sqrt(abs(b2-4ac))
+     	sub.s   $f2, $f5, $f2		# ???
+     	add.s   $f9,$f1,$f1     	# 2*a
+     	div.s   $f7,$f2,$f9     	# (-b) / 2a
+     	div.s   $f8,$f6,$f9     	# (sqrt(abs(b2-4ac))) / 2a
      
      	print_str "x1,2: "
-     	mov.s   $f12, $f7   		# Parte real
-     	print_float($f12)
+     	mov.s   $f12, $f7   		# $f12 = parte real
+     	print_float($f12)		# imprime parte real
      	print_str " +- "
-     	mov.s   $f12, $f8   		# Parte imaginária
-     	print_float($f12)
+     	mov.s   $f12, $f8   		# $f12 = parte imaginária
+     	print_float($f12)		# imprime parte imaginária
      	print_str "i\n"
      
 fim:
-     	li      $v0, 10     		# exit
+     	li      $v0, 10     		# encerra o programa (syscall)
      	syscall
