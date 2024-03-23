@@ -1,8 +1,8 @@
 	.include "macros.asm"		# utilizando as funções read_float, print_str
 
 	.data
-cte2:	.float	2.0 
-cte4: 	.float	4.0
+cte2:	.float	2.0 			# ??? aonde foi usado?
+cte4: 	.float	4.0			# pra q q serve?
 
 	.text
 	.globl main
