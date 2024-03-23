@@ -1,6 +1,6 @@
 .data
     n: .word 100  # Valor de entrada
-    result: .word 0  # Resultado da função phi
+    result: .word 0  # Resultado da função euler phi
     msg: .asciiz "O resultado é: "
 
 .text
@@ -13,8 +13,8 @@ main:
 
 loop:
     beq $t1, $a0, fim  # Se o contador for igual a n, termina o loop
-    jal mdc  # Chama a função gcd
-    beq $v0, 1, incrementar  # Se gcd(n, i) for 1, incrementa o resultado
+    jal mdc  # Chama a função MDC
+    beq $v0, 1, incrementar  # Se MDC(n, i) for 1, incrementa o resultado
     addi $t1, $t1, 1  # Incrementa o contador
     j loop
 
@@ -44,17 +44,17 @@ mdc:
     add $t4, $t1, $zero  # Copia i para $t4
 
 mdc_loop:
-    beq $t4, $zero, mdc_end  # Se i for 0, termina o loop
+    beq $t4, $zero, mdc_fim  # Se i for 0, termina o loop
     add $t5, $t3, $zero  # Copia n para $t5
-    rem $t5, $t5, $t4  # Calcula n mod i
+    rem $t5, $t5, $t4  # Calcula resto da divisão de n por i
     add $t3, $t4, $zero  # Copia i para n
     add $t4, $t5, $zero  # Copia n mod i para i
     j mdc_loop
 
-mdc_end:
+mdc_fim:
     add $v0, $t3, $zero  # Retorna n
     jr $ra
 
-exit:
+fim:
     li $v0, 10  # Código de saída
     syscall
