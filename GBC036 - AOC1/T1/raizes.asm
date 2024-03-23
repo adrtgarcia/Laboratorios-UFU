@@ -1,4 +1,4 @@
-	.include "macros.asm"		# utilizando as funções read_float, print_str
+.include "macros.asm"		# utilizando as funções read_float, print_str
 
 	.data
 cte4: 	.float	4.0			# define a constante 4
@@ -40,7 +40,7 @@ main:
      	add.s   $f9, $f1, $f1     	# $f9 = 2a
      	add.s   $f14, $f3, $f3    	# $f14 = 2c
      
-     	c.le.s  $f13, $f2   		# if (ac <= bc) ??? quando que $f2 virou bc? 
+     	c.le.s  $f13, $f2   		# if (ac <= -b) flag = 0
      	bc1t    segundo_metodo		# if (flag == 0) pula para a função segundo método
      	j       primeiro_metodo		# else pula para a função primeiro método
      
@@ -69,9 +69,9 @@ imprimir_resultado:
      	j 	fim			# jump para o fim do programa
 
 complexo:
-     	abs.s   $f0, $f0		# ???
+     	abs.s   $f0, $f0		# módulo de delta
      	sqrt.s  $f6,$f0     		# sqrt(abs(b2-4ac))
-     	sub.s   $f2, $f5, $f2		# ???
+     	sub.s   $f2, $f5, $f2		# b = 0 - b
      	add.s   $f9,$f1,$f1     	# 2*a
      	div.s   $f7,$f2,$f9     	# (-b) / 2a
      	div.s   $f8,$f6,$f9     	# (sqrt(abs(b2-4ac))) / 2a
