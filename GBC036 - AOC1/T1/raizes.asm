@@ -69,9 +69,9 @@ imprimir_resultado:
      	j 	fim			# jump para o fim do programa
 
 complexo:
-     	abs.s   $f0, $f0		# ???
+     	abs.s   $f0, $f0		# módulo de $f0 (delta)
      	sqrt.s  $f6,$f0     		# sqrt(abs(b2-4ac))
-     	sub.s   $f2, $f5, $f2		# ???
+     	sub.s   $f2, $f5, $f2		# -b
      	add.s   $f9,$f1,$f1     	# 2*a
      	div.s   $f7,$f2,$f9     	# (-b) / 2a
      	div.s   $f8,$f6,$f9     	# (sqrt(abs(b2-4ac))) / 2a
