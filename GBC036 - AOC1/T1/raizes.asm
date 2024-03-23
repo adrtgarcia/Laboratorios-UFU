@@ -17,7 +17,7 @@ main:
      
      	mtc1   	$zero, $f5		# (fpu) $f5 = 0
      	c.eq.s  0, $f1, $f5		# if (a == 0) flag = 0
-     	bc1t  	fim         		# if (flag == 0) encerra o programa 
+     	bc1t  	a_zero         		# if (flag == 0) encerra o programa 
      
      	mul.s   $f0, $f2, $f2   	# b^2
      
@@ -29,7 +29,7 @@ main:
      	sub.s   $f0, $f0, $f4   	# $f0 = delta
      
      	c.lt.s 	$f0, $f5   		# if (delta < 0) flag = 0
-     	bc1t complexo     		# if (flag == 0) pula para a função complexo
+     	bc1t 	complexo     		# if (flag == 0) pula para a função complexo
      
      	sqrt.s  $f6,$f0     		# $f6 = raiz quadrada de delta
      	sub.s   $f2, $f5, $f2   	# $f2 = -b
@@ -69,9 +69,9 @@ imprimir_resultado:
      	j 	fim			# jump para o fim do programa
 
 complexo:
-     	abs.s   $f0, $f0		# módulo de $f0 (delta)
+     	abs.s   $f0, $f0		# ???
      	sqrt.s  $f6,$f0     		# sqrt(abs(b2-4ac))
-     	sub.s   $f2, $f5, $f2		# -b
+     	sub.s   $f2, $f5, $f2		# ???
      	add.s   $f9,$f1,$f1     	# 2*a
      	div.s   $f7,$f2,$f9     	# (-b) / 2a
      	div.s   $f8,$f6,$f9     	# (sqrt(abs(b2-4ac))) / 2a
@@ -83,6 +83,10 @@ complexo:
      	mov.s   $f12, $f8   		# $f12 = parte imaginária
      	print_float($f12)		# imprime parte imaginária
      	print_str "i\n"
+     	j fim
+
+a_zero:
+      	print_str"O coeficiente 'a' nao pode ser zero"
      
 fim:
      	li      $v0, 10     		# encerra o programa (syscall)
