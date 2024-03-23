@@ -1,60 +1,55 @@
-.data
-    n: .word 100  # Valor de entrada
-    result: .word 0  # Resultado da função euler phi
-    msg: .asciiz "O resultado é: "
+	.data
+n: 	.word 	100  				# valor de entrada
+result: .word 	0  				# resultado da função euler phi
+msg: 	.asciiz "O resultado é: "
 
-.text
-.globl main
+	.text
+	.globl main
 main:
-    la $t0, n  # Carrega o endereço de n em $t0
-    lw $a0, 0($t0)  # Carrega o valor de n em $a0
-    addi $t1, $zero, 1  # Inicializa o contador
-    addi $t2, $zero, 0  # Inicializa o resultado
+	la 	$t0, n  			# carrega o endereço de n em $t0
+    	lw 	$a0, 0($t0)  			# carrega o valor de n em $a0
+    	addi 	$t1, $zero, 1  			# inicializa o contador
+    	addi 	$t2, $zero, 0  			# inicializa o resultado
 
 loop:
-    beq $t1, $a0, fim  # Se o contador for igual a n, termina o loop
-    jal mdc  # Chama a função MDC
-    beq $v0, 1, incrementar  # Se MDC(n, i) for 1, incrementa o resultado
-    addi $t1, $t1, 1  # Incrementa o contador
-    j loop
+    	beq 	$t1, $a0, fim  			# if ( n == contador) encerra o loop
+    	jal 	mdc  				# chama a função mdc
+    	beq 	$v0, 1, incrementar  		# if (mdc(n, i) = 1), incrementa o resultado
+    	addi 	$t1, $t1, 1  			# contador++
+    	j 	loop				# volta para o começo do loop
 
 incrementar:
-    addi $t2, $t2, 1  # Incrementa o resultado
-    addi $t1, $t1, 1  # Incrementa o contador
-    j loop
+    	addi 	$t2, $t2, 1  			# resultado++
+    	addi 	$t1, $t1, 1  			# contador++
+    	j 	loop				# volta para o loop anterior
 
 fim:
-    la $t0, result  # Carrega o endereço de result em $t0
-    sw $t2, 0($t0)  # Armazena o resultado em result
+    	la 	$t0, result  			# carrega o endereço de result em $t0
+    	sw 	$t2, 0($t0)  			# armazena o resultado em result
 
-    # Imprime a mensagem
-    la $a0, msg
-    li $v0, 4
-    syscall
+    	la 	$a0, msg			# imprime a string (syscall)
+    	li	$v0, 4
+    	syscall
 
-    # Imprime o resultado
-    move $a0, $t2
-    li $v0, 1
-    syscall
+    	move 	$a0, $t2			# imprime o resultado (syscall)
+    	li 	$v0, 1
+    	syscall
 
-    j exit
+    	li 	$v0, 10  			# encerra o programa (syscall)
+    	syscall
 
 mdc:
-    add $t3, $a0, $zero  # Copia n para $t3
-    add $t4, $t1, $zero  # Copia i para $t4
+    	add 	$t3, $a0, $zero  		# copia n para $t3
+    	add 	$t4, $t1, $zero  		# copia i para $t4
 
 mdc_loop:
-    beq $t4, $zero, mdc_fim  # Se i for 0, termina o loop
-    add $t5, $t3, $zero  # Copia n para $t5
-    rem $t5, $t5, $t4  # Calcula resto da divisão de n por i
-    add $t3, $t4, $zero  # Copia i para n
-    add $t4, $t5, $zero  # Copia n mod i para i
-    j mdc_loop
+    	beq 	$t4, $zero, mdc_fim  		# if (i == 0) termina o loop
+    	add 	$t5, $t3, $zero  		# copia n para $t5
+    	rem 	$t5, $t5, $t4  			# calcula resto da divisão de n por i
+    	add 	$t3, $t4, $zero  		# copia i para n
+    	add 	$t4, $t5, $zero  		# copia n mod i para i
+    	j 	mdc_loop			# volta para o começo do loop
 
 mdc_fim:
-    add $v0, $t3, $zero  # Retorna n
-    jr $ra
-
-fim:
-    li $v0, 10  # Código de saída
-    syscall
+    	add 	$v0, $t3, $zero  		# $v0 = resultado
+    	jr 	$ra				# retorna o resultado para a função loop
