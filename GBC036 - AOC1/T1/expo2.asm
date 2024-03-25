@@ -1,34 +1,34 @@
-# P2 - potenciaÁ„o, fragmento 1
+# P1 - potencia√ß√£o, fragmento 2
 
-	.data					# declarar vari·veis
+	.data					# declarar vari√°veis
 x:      .word 	3         			# defina aqui o valor de x (base)
 n:      .word 	4         			# defina aqui o valor de n (expoente)
-result: .word 	1         			# resultado inicializada como 1 (fator nulo da multiplicaÁ„o)
+result: .word 	1         			# resultado inicializada como 1 (fator nulo da multiplica√ß√£o)
 
 	.text
 	.globl expo2
 expo2:
-    	la	$t0, x				# $t0 recebe o endereÁo de x
+    	la	$t0, x				# $t0 recebe o endere√ßo de x
 	lw	$a0, 0($t0)			# $a0 recebe o valor apontado por $t0
-	la	$t1, n				# $t1 recebe o endereÁo de n
+	la	$t1, n				# $t1 recebe o endere√ßo de n
 	lw	$a1, 0($t1)			# $a1 recebe o valor apontado por $t1
-	la	$t2, result			# $t2 recebe o endereÁo de result
+	la	$t2, result			# $t2 recebe o endere√ßo de result
 	lw	$t2, 0($t2)			# $t2 recebe o valor apontado por $t2
 
 loop:
     	beq 	$t1, $zero, fimloop   		# if (n == 0) saia do loop
-    	andi 	$t3, $t1, 1          		# if ($t1 == 1) $t1 tem valor Ìmpar, $t3 recebe 1
-    	bnez 	$t3, impar           		# if ($t3 != 0) jump para Ìmpar
+    	andi 	$t3, $t1, 1          		# if ($t1 == 1) $t1 tem valor √≠mpar, $t3 recebe 1
+    	bnez 	$t3, impar           		# if ($t3 != 0) jump para √≠mpar
 
-par:						# n È par, eleva x ao quadrado
+par:						# n √© par, eleva x ao quadrado
    	mul 	$t0, $t0, $t0         		# x *= x
-    	srl 	$t1, $t1, 1           		# n /= 2 (deslocamento lÛgico para a direita)
+    	srl 	$t1, $t1, 1           		# n /= 2 (deslocamento l√≥gico para a direita)
     	j 	loop				# jump para loop
 
-impar:						# n È Ìmpar, multiplica result por x e eleva x ao quadrado
+impar:						# n √© √≠mpar, multiplica result por x e eleva x ao quadrado
   	mul 	$t2, $t2, $t0         		# result *= x
     	mul 	$t0, $t0, $t0         		# x *= x
-    	srl 	$t1, $t1, 1           		# n /= 2 (deslocamento lÛgico para a direita)
+    	srl 	$t1, $t1, 1           		# n /= 2 (deslocamento l√≥gico para a direita)
     	j 	loop				# jump para loop
 
 fimloop:
