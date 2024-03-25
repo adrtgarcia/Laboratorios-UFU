@@ -1,25 +1,25 @@
-# P1 - potenciaÁ„o, fragmento 1
+# P1 - potencia√ß√£o, fragmento 1
 
-	.data					# declarar vari·veis
+	.data					# declarar vari√°veis
 x:	.word	2				# defina aqui o valor de x (base)
 n:	.word	3				# defina aqui o valor de n (expoente)
-result:	.word	1				# resultado inicializado como 1 (fator nulo da multiplicaÁ„o)
+result:	.word	1				# resultado inicializado como 1 (fator nulo da multiplica√ß√£o)
 
 	.text
 	.globl expo1
-expo1:						# movendo cada vari·vel para seus respectivos registradores
-	la	$t0, x				# $t0 recebe o endereÁo de x
+expo1:						# movendo cada vari√°vel para seus respectivos registradores
+	la	$t0, x				# $t0 recebe o endere√ßo de x
 	lw	$a0, 0($t0)			# $a0 recebe o valor apontado por $t0
-	la	$t1, n				# $t1 recebe o endereÁo de n
+	la	$t1, n				# $t1 recebe o endere√ßo de n
 	lw	$a1, 0($t1)			# $a1 recebe o valor apontado por $t1
-	la	$t2, result			# $t2 recebe o endereÁo de result
+	la	$t2, result			# $t2 recebe o endere√ßo de result
 	lw	$t2, 0($t2)			# $t2 recebe o valor apontado por $t2
 	
 	j	teste				# jump para teste
 	
 while:
 	mult	$t2, $a0			# resultado *= x
-	mflo	$t2				# LO recebe o resultado da multiplicaÁ„o
+	mflo	$t2				# LO recebe o resultado da multiplica√ß√£o
 	subi	$a1, $a1, 1			# n--
 
 teste:
