@@ -1,3 +1,5 @@
+# P2 - avaliação polinomial
+	
 	.data 
 coef: 	.word 	2, -11, -7, -27, 88 			# vetor de coeficientes 
 x: 	.word 	3 					# valor de x 
