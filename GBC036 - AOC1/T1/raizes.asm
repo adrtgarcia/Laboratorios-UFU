@@ -1,6 +1,6 @@
 # P3 - raízes de segunda ordem
 
-	.include "macros.asm"		# utilizando as funções read_float, print_str
+	.include "macros.asm"		# utilizando as funções read_float, print_str, print_float
 
 	.data
 cte4: 	.float	4.0			# define a constante 4
