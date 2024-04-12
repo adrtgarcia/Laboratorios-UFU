@@ -15,3 +15,13 @@ tElem *pesquisaLista (tElem *prim, int chaveBusca) {
   }
   return NULL;
 }
+
+// pequisa sequencial ordenada
+int buscaSequencialOrdenada (int *vetor, int n, int chaveBusca) {
+  int i;
+  for (i = 0; i < n; i++) {
+    if (vetor[i] == chaveBusca) return i;
+    else if (vetor[i] > chaveBusca) return -1;
+  }
+  return -1;
+}
