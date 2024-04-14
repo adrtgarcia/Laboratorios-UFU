@@ -31,7 +31,7 @@ void retira (registro x, apontador *p) {
     retira(x, &(*p)->dir;
     return;
   }
-  if ((*p)->esq != NUL) {
+  if ((*p)->esq != NULL) {
     antecessor(*p, &(*p)->esq);
     return;
   }
