@@ -2,8 +2,8 @@
 vetor:				.space 100    				# vetor para armazenar a entrada do usuário
 mensagem_Receber_Palavra:	.asciiz "Digite uma palavra: "  	# mensagem para receber a palavra
 
-    .text
-    .globl main
+    	.text
+    	.globl main
 
 main:
     									# imprimir a mensage para o usuário
