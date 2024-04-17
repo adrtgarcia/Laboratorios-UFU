@@ -14,7 +14,7 @@ public class Onibus extends Veiculo{
 		this.assentos = assentos;
 	}
 	
-	public void exibirDads() {
+	public void exibirDados() {
 		System.out.println("placa: " + getPlaca());
 		System.out.println("ano: " + getAno());
 		System.out.println("assentos: " + getAssentos());
