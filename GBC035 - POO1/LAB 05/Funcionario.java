@@ -33,7 +33,7 @@ public abstract class Funcionario {
     return this.salarioBase;
   }
 
-  public double salarioTotal() {
+  public abstract double salarioTotal() {
     return salarioBase;
   }
 }
