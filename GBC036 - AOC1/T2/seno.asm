@@ -14,7 +14,6 @@ main:
     	lwc1    $f10, divisor
     	mul.s   $f0, $f0, $f1               	# graus * pi
 	div.s   $f0, $f0, $f10               	# divide o ângulo por 180 graus
-#    j       sinex                        	# chamada da função sinex
                                        	
 senox: 						# cálculo do seno de x
     	mtc1    $zero, $f5                   	# inicializa $f5 com zero para ser usado posteriormente
