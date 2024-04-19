@@ -1,6 +1,6 @@
 	.data 
 stack: 	.word 0:1000     								# Declaração de uma pilha com 1000 palavras
-vetor:  .word  22,89,1,34,100,55,42,82,66,21,332,52,23,48,17,14,97,53,72,102  		# Array de inteiros
+vetor:  .word 22,89,1,34,100,55,42,82,66,21,332,52,23,48,17,14,97,53,72,102  		# Array de inteiros
 espaco: .asciiz " "     								# String representando um espaço
 
 	.text
