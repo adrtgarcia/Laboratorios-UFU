@@ -7,10 +7,12 @@
     [tail, init, reverse] -- inválido
 -}
 
+
 -- exercício 2
     second xs = head (tail xs) -- retorna o segundo elemento da lista
     pair x y = (x, y) -- retorna uma tupla com os elementos
     palindrome xs = reverse xs == xs -- verifica se a string é palíndromo
+
 
 -- exercício 3
 ultimo1 :: [Int] -> Int 
@@ -21,6 +23,7 @@ ultimo2 lista = lista !! (lenght lista - 1)
 
 ultimo3 :: [Int] -> Int 
 ultimo3 lista = head (drop (lenght lista - 1) lista)
+
 
 -- exercício 4
 type Aluno = (Int, [Char], Double)
