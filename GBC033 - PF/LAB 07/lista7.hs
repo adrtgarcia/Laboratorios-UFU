@@ -28,5 +28,13 @@ flip :: (t1 -> t2 -> t3) -> t2 -> t1 -> t3
 flip f x y = f y x
 
 
--- exercício 
-type ShopItem = (String, Float, Float) -- nome, qnt, preco/un
+-- exercício 4
+data ShopItem = ShopItem String Float Float -- nome, qnt, preco/un
+
+valorItem :: ShopItem -> Float
+valorItem (ShopItem _ qnt preco) = qnt * preco
+
+valorCompra :: [ShopItem] -> Float
+valorCompra [] = 0 
+valorCompra lista = foldr somaItens 0 lista
+                    where somaItens item acc = valorItem item + acc
