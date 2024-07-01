@@ -27,8 +27,6 @@ x <- c(23,10,45)
 x
 d <- c(x,45)
 d+c(TRUE,FALSE)
-# 23 10 45
-# T F T F
 x[c(2,3,3)]
 x < 30
 sum(x<30)          # somando T + T + F
