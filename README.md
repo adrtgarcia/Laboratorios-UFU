@@ -13,3 +13,4 @@ Repositório para aulas práticas de programação do curso de Ciência da Compu
 | GBC034 | Algoritmos e Estruturas de Dados 2 | C |
 | GBC035 | Programação Orientada a Objetos 1 | Java |
 | GBC036 | Arquitetura e Organização de Computadores 1 | Assembly |
+| FAMAT31041 | Estatística Computacional | R |
