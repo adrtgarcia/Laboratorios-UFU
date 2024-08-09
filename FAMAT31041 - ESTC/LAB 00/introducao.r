@@ -1,51 +1,63 @@
 # operações básicas
-2+2                # adição
-1-10               # subtração
-2*87               # produto
-34/21              # divisão
-3**6               # potenciação
-3^6                # potenciação
+
+2 + 5           # soma
+2 - 4           # subtração
+2 * 3           # multiplicação
+2 / 2           # divisão
+3 ** 2          # potência
+3 ^ 2           # potência
+10 %% 3         # resto da divisão
 
 
-a <- 123*98        # cria objetos
-a_1 <- 123*98      # cria objetos
+# atribuindo valores (<-, ->, =)
+
+a <- 3 * 2
+4 * 3 -> b
+resultado = a + b
+d <- TRUE
+
+
+# função class()
+
 class(a)
-12+1245 -> b       # cria objetos
-w <- "furiosa"
-class(w)
-y <- TRUE          # ou T
-class(y)
+class(b)
+class(d)
 
 
-TRUE + FALSE
+# valores lógicos
 TRUE + TRUE
-FALSE + FALSE
+TRUE + FALSE
+
+TRUE | TRUE     # or
+TRUE | FALSE
+TRUE & FALSE    # and
+FALSE & FALSE
+!TRUE           # not
 
 
-# vetores
-x <- c(23,10,45)
-x
-d <- c(x,45)
-d+c(TRUE,FALSE)
-x[c(2,3,3)]
-x < 30
-sum(x<30)          # somando T + T + F
-x[x<30]
-which(x<30)
-c(12,34,"cruzeiro")
-23:10345
-p<-23:10345
-p[14]
+# criando vetores
+
+vet1 <- c(3, 7, 10)
+lenght(vet1)
+sum(vet1)
+mean(vet1)
+
+vet2 <- c(1, 2, "texto")
+class(vet2)
+vet2[c(2, 3)]
+
+vet3 <- c(vet1, 60, 78)
+vet3 < 50                     # verifica valores menores que 50
+sum(vet3 < 50)                # soma os valores lógicos
+vet3[vet3 < 50]               # busca valores menores que 50
+sum(vet3[vet3 < 50])          # soma valores menores que 50
 
 
-dado1 <- sample(x = 1:6 ,size = 1000000, replace = TRUE)
-dado1
-# dado1[dado1==3]
-sum(dado1 == 3)/1000000
-mean(dado1 == 3)   # media que o 3 apareceu com relação aos 10000 lançamentos
+# criando um dado
 
-
-dado2 <- sample(x = 1:6 ,size = 1000000, replace = TRUE)
-soma <- dado1+dado2
-soma[1:10]
-mean(soma==3)
+sample(10)
+dado <- sample(x = 1:6, size = 1000000, replace = TRUE)
+dado
+sum(dado == 3)/1000000
+mean(dado == 3)
+barplot(table(dado))
