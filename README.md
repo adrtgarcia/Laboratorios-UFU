@@ -1,7 +1,7 @@
 # Laboratorios-UFU
 Repositório para aulas práticas de programação do curso de Ciência da Computação (UFU).
 
-### 📚 Linguagens de programação
+### 🖥️ Linguagens de programação
 
 | **Código** | **Disciplina** | **Linguagem** |
 |--------|------------|-----------|
