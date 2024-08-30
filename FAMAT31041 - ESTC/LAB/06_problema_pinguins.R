@@ -1,4 +1,4 @@
-# O objetivo deste tutorial é criar um modelo de classificação que seja capaz de prever a espécie de um pinguim a partir de seu peso, tamanho da asa, tamanho do bico e profundidade do bico. Para isso, construiremos do zero um modelo KNN.
+# O objetivo deste laboratório é criar um modelo de classificação que seja capaz de prever a espécie de um pinguim a partir de seu peso, tamanho da asa, tamanho do bico e profundidade do bico. Para isso, construiremos do zero um modelo KNN.
 
 # Lendo o conjunto
 library(palmerpenguins)
