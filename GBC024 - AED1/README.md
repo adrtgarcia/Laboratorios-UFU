@@ -2,10 +2,7 @@
 ![C](https://img.shields.io/badge/C-FCCA28?style=for-the-badge&logo=c&logoColor=white)
 
 ### Objetivos
-"Capacitar o aluno a escrever programas eficientes, em termos de tempo e espaço, utilizando boas práticas de programação, para solução de problemas baseados em listas.
-* Aplicar o conceito de Tipo Abstrato de Dados
-* Discutir o custo computacional de algoritmos.
-* Aplicar adequadademente o uso de listas, filas e pilhas."
+Capacitar o aluno a escrever programas eficientes, em termos de tempo e espaço, utilizando boas práticas de programação, para solução de problemas baseados em listas, aplicar o conceito de Tipo Abstrato de Dados, discutir o custo computacional e algoritmos e aplicar adequadamente o uso de listas, filas e pilhas.
 
 ### Ementa
 * Alocação dinâmica de memória
