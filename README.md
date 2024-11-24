@@ -11,6 +11,7 @@ Repositório para aulas práticas de programação do curso de Ciência da Compu
 | GBC026 | Sistemas Digitais | VHDL |
 | GBC033 | Programação Funcional | Haskell |
 | GBC034 | Algoritmos e Estruturas de Dados 2 | C |
-| GBC035 | Programação Orientada a Objetos 1 | Java |
+| GBC035 | Programação Orientada a Objetos 1 | Java, SQL |
 | GBC036 | Arquitetura e Organização de Computadores 1 | Assembly |
 | FAMAT31041 | Estatística Computacional | R |
+| GBC043 | Sistemas de Banco de Dados | SQL |
