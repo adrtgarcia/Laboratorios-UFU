@@ -1,7 +1,5 @@
--- Set the schema
 SET search_path TO hipermercado;
 
--- Categoria
 INSERT INTO categoria (cat_codigo, cat_descricao) VALUES
 (1, 'Alimentos'),
 (2, 'Bebidas'),
@@ -14,7 +12,6 @@ INSERT INTO categoria (cat_codigo, cat_descricao) VALUES
 (9, 'Jardinagem'),
 (10, 'Pet Shop');
 
--- Secao
 INSERT INTO secao (sec_codigo, sec_nome, cat_codigo) VALUES
 (1, 'Padaria', 1),
 (2, 'Açougue', 1),
@@ -27,7 +24,6 @@ INSERT INTO secao (sec_codigo, sec_nome, cat_codigo) VALUES
 (9, 'Camisetas', 6),
 (10, 'Tênis', 7);
 
--- Produto
 INSERT INTO produto (prd_nro_cadastro, prd_descricao, prd_media_venda_mes, prd_nome_fabricante, prd_unidade_venda, prd_preco, prd_qnt_estoque, sec_codigo) VALUES
 (1, 'Pão Francês', 1000, 'Padaria do Hipermercado', 1, 0.50, 500, 1),
 (2, 'Filé Mignon', 200, 'Frigorífico ABC', 1, 59.90, 100, 2),
@@ -40,7 +36,6 @@ INSERT INTO produto (prd_nro_cadastro, prd_descricao, prd_media_venda_mes, prd_n
 (9, 'Camiseta Básica', 200, 'Moda Conforto', 1, 29.90, 500, 9),
 (10, 'Tênis Esportivo', 100, 'Calçados Ágeis', 1, 159.90, 200, 10);
 
--- Promocao
 INSERT INTO promocao (pro_codigo, pro_descricao, pro_data_inicio, pro_data_fim, pro_nome) VALUES
 (1, 'Desconto de 10% em todos os pães', '01-10-2024', '07-10-2024', 'Semana do Pão'),
 (2, 'Compre 1 kg de carne e leve outro com 50% de desconto', '08-10-2024', '14-10-2024', 'Feira de Carnes'),
@@ -53,7 +48,6 @@ INSERT INTO promocao (pro_codigo, pro_descricao, pro_data_inicio, pro_data_fim, 
 (9, 'Compre 2 camisetas e ganhe 1', '26-11-2024', '02-12-2024', 'Moda em Triplo'),
 (10, 'Tênis com 40% de desconto', '03-12-2024', '09-12-2024', 'Corrida de Ofertas');
 
--- Fornecedor
 INSERT INTO fornecedor (for_nro_cadastro, for_valor_total_venda_ano_pas, for_denominacao_social, for_desconto, for_prazo_medio_entrega, for_pessoa_contato, for_email, for_condicao_pagamento, for_cidade, for_estado, for_bairro, for_cep) VALUES
 (1, 1000000.00, 'Padaria Wholesaler Ltda', 5.0, 2, 'João Silva', 'joao@padariawholesaler.com', '30 dias', 'São Paulo', 'SP', 'Centro', '01001-000'),
 (2, 2500000.00, 'Frigorífico ABC S.A.', 3.5, 3, 'Maria Santos', 'maria@frigorificoabc.com', '45 dias', 'Porto Alegre', 'RS', 'Sarandi', '91110-001'),
@@ -66,7 +60,6 @@ INSERT INTO fornecedor (for_nro_cadastro, for_valor_total_venda_ano_pas, for_den
 (9, 1500000.00, 'Moda Conforto Ltda', 5.5, 4, 'Ricardo Nunes', 'ricardo@modaconforto.com', '60 dias', 'Fortaleza', 'CE', 'Meireles', '60165-121'),
 (10, 2000000.00, 'Calçados Ágeis S.A.', 4.5, 5, 'Patrícia Lima', 'patricia@calcadosageis.com', '45 dias', 'Novo Hamburgo', 'RS', 'Centro', '93510-100');
 
--- Cliente
 INSERT INTO cliente (cli_cpf, cli_nome, cli_data_nascimento, cli_gasto_total_ano_pas, cli_profissao, cli_end_residencial) VALUES
 ('123.456.789-00', 'Ana Silva', '15-03-1985', 5000.00, 'Professora', 'Rua das Flores, 123'),
 ('234.567.890-11', 'Carlos Santos', '22-07-1990', 7500.00, 'Engenheiro', 'Av. Principal, 456'),
@@ -79,18 +72,15 @@ INSERT INTO cliente (cli_cpf, cli_nome, cli_data_nascimento, cli_gasto_total_ano
 ('901.234.567-88', 'Camila Nunes', '20-12-1993', 4200.00, 'Psicóloga', 'Av. Rebouças, 3000'),
 ('012.345.678-99', 'Lucas Lima', '08-06-1986', 7200.00, 'Contador', 'Rua da Consolação, 1200');
 
--- Diamante
 INSERT INTO diamante (dia_gasto_minimo, cli_cpf) VALUES
 (8000.00, '678.901.234-55');
 
--- Ouro
 INSERT INTO ouro (our_gasto_minimo, cli_cpf) VALUES
 (6000.00, '234.567.890-11'),
 (6000.00, '345.678.901-22'),
 (6000.00, '890.123.456-77'),
 (6000.00, '012.345.678-99');
 
--- Prata
 INSERT INTO prata (pra_gasto_minimo, cli_cpf) VALUES
 (4000.00, '123.456.789-00'),
 (4000.00, '456.789.012-33'),
@@ -98,7 +88,6 @@ INSERT INTO prata (pra_gasto_minimo, cli_cpf) VALUES
 (4000.00, '789.012.345-66'),
 (4000.00, '901.234.567-88');
 
--- Oferece_produto
 INSERT INTO oferece_produto (ofe_preco, for_nro_cadastro, prd_nro_cadastro) VALUES
 (0.40, 1, 1),
 (55.00, 2, 2),
@@ -111,7 +100,6 @@ INSERT INTO oferece_produto (ofe_preco, for_nro_cadastro, prd_nro_cadastro) VALU
 (25.00, 9, 9),
 (150.00, 10, 10);
 
--- Fornecedor_telefone
 INSERT INTO fornecedor_telefone (for_telefone, for_nro_cadastro) VALUES
 ('(11) 1234-5678', 1),
 ('(51) 2345-6789', 2),
@@ -124,7 +112,6 @@ INSERT INTO fornecedor_telefone (for_telefone, for_nro_cadastro) VALUES
 ('(85) 9012-3456', 9),
 ('(51) 0123-4567', 10);
 
--- Cliente_endereco
 INSERT INTO cliente_endereco (cli_endereco_entrega, cli_cpf) VALUES
 ('Rua das Flores, 123, Vila Mariana, São Paulo - SP', '123.456.789-00'),
 ('Avenida Paulista, 1000, Bela Vista, São Paulo - SP', '234.567.890-11'),
@@ -137,9 +124,6 @@ INSERT INTO cliente_endereco (cli_endereco_entrega, cli_cpf) VALUES
 ('Avenida São João, 1234, República, São Paulo - SP', '901.234.567-88'),
 ('Rua Teodoro Sampaio, 753, Pinheiros, São Paulo - SP', '012.345.678-99');
 
--- Continuação das inserções
-
--- Cliente_telefone
 INSERT INTO cliente_telefone (cli_telefone, cli_cpf) VALUES
 ('(11) 98765-4321', '123.456.789-00'),
 ('(11) 87654-3210', '234.567.890-11'),
@@ -152,7 +136,6 @@ INSERT INTO cliente_telefone (cli_telefone, cli_cpf) VALUES
 ('(11) 10987-6543', '901.234.567-88'),
 ('(11) 09876-5432', '012.345.678-99');
 
--- Compra
 INSERT INTO compra (com_forma_pagamento, com_valor_total_desc, com_valor_total, com_horario, com_data, com_num_cupom_fiscal, cli_cpf) VALUES
 ('Cartão de Crédito', 2.40, 2.50, '10:30:00', '01-10-2024', 'CF001', '123.456.789-00'),
 ('Dinheiro', 114.81, 119.80, '11:45:00', '02-10-2024', 'CF002', '234.567.890-11'),
@@ -165,7 +148,6 @@ INSERT INTO compra (com_forma_pagamento, com_valor_total_desc, com_valor_total, 
 ('Cartão de Crédito', 84.70, 89.70, '10:15:00', '09-10-2024', 'CF009', '901.234.567-88'),
 ('Dinheiro', 149.90, 159.90, '12:40:00', '10-10-2024', 'CF010', '012.345.678-99');
 
--- Realiza_compra
 INSERT INTO realiza_compra (com_quantidade, com_desconto, cli_cpf, prd_nro_cadastro,com_num_cupom_fiscal) VALUES
 (5, 0.00, '123.456.789-00', 1, 'CF001'),
 (2, 5.00, '234.567.890-11', 2, 'CF002'),
@@ -178,7 +160,6 @@ INSERT INTO realiza_compra (com_quantidade, com_desconto, cli_cpf, prd_nro_cadas
 (3, 5.00, '901.234.567-88', 9, 'CF009'),
 (1, 10.00, '012.345.678-99', 10, 'CF010');
 
--- Funcionario_funcao
 INSERT INTO funcionario_funcao (fnc_codigo, fnc_nome) VALUES
 (1, 'Gerente'),
 (2, 'Empacotador'),
@@ -191,7 +172,6 @@ INSERT INTO funcionario_funcao (fnc_codigo, fnc_nome) VALUES
 (9, 'Segurança'),
 (10, 'Auxiliar Administrativo');
 
--- Funcionario
 INSERT INTO funcionario (fun_cpf, fun_nome, fun_endereco, fun_telefone, fun_estado_civil, fun_data_nascimento, fun_nivel_formacao, fun_valor_hora_extra, fun_salario, fun_jornada_trabalho, fun_cpf_gerente, fnc_codigo) VALUES
 ('111.222.333-44', 'Roberto Gomes', 'Rua A, 123', '(11) 91234-5678', 'Casado', '15-05-1980', 'Superior Completo', 30.00, 5000.00, 40, NULL, 1),
 ('222.333.444-55', 'Carla Silva', 'Rua B, 456', '(11) 92345-6789', 'Solteira', '22-08-1995', 'Ensino Médio', 15.00, 1800.00, 40, NULL, 2),
@@ -204,19 +184,15 @@ INSERT INTO funcionario (fun_cpf, fun_nome, fun_endereco, fun_telefone, fun_esta
 ('999.000.111-22', 'Ricardo Alves', 'Rua I, 2021', '(11) 99012-3456', 'Solteiro', '20-06-1987', 'Ensino Médio', 20.00, 2300.00, 40, NULL, 9),
 ('000.111.222-33', 'Juliana Martins', 'Rua J, 2223', '(11) 90123-4567', 'Casada', '08-04-1991', 'Superior Completo', 25.00, 3000.00, 40, NULL, 10);
 
--- Gerente
 INSERT INTO gerente (ger_data_ingresso, ger_formacao_basica, fun_cpf) VALUES
 ('15-01-2010', 'Administração', '111.222.333-44');
 
--- Empacotador
 INSERT INTO empacotador (fun_cpf) VALUES
 ('222.333.444-55');
 
--- Marketing
 INSERT INTO marketing (mar_portfolio, mar_formacao_basica, fun_cpf) VALUES
 ('Portfolio1.pdf', 'Marketing', '333.444.555-66');
 
--- Propaganda
 INSERT INTO propaganda (prd_nro_cadastro, pro_codigo, fun_cpf) VALUES
 (1, 1, '333.444.555-66'),
 (2, 2, '333.444.555-66'),
@@ -229,29 +205,23 @@ INSERT INTO propaganda (prd_nro_cadastro, pro_codigo, fun_cpf) VALUES
 (9, 9, '333.444.555-66'),
 (10, 10, '333.444.555-66');
 
--- Atendente_padaria
 INSERT INTO atendente_padaria (fun_cpf) VALUES
 ('444.555.666-77');
 
--- Faxineiro
 INSERT INTO faxineiro (fun_cpf) VALUES
 ('555.666.777-88');
 
--- Atendente_caixa
 INSERT INTO atendente_caixa (fun_cpf) VALUES
 ('666.777.888-99');
 
--- Repositor
 INSERT INTO repositor (fun_cpf) VALUES
 ('777.888.999-00');
 
--- Responsavel_secao
 INSERT INTO responsavel_secao (fun_cpf, sec_codigo) VALUES
 ('777.888.999-00', 1),
 ('777.888.999-00', 2),
 ('777.888.999-00', 3);
 
--- Pedido
 INSERT INTO pedido (ped_codigo, ped_quantidade, ped_valor_desc, ped_valor_total, ped_devolucao, ped_data_entrega, ped_data_previsao, ped_data_emissao, for_nro_cadastro, prd_nro_cadastro, fun_cpf) VALUES
 (1, 100, 47.50, 50.00, 'Não', '03-10-2024', '03-10-2024', '01-10-2024', 1, 1, '111.222.333-44'),
 (2, 50, 2890.18, 2995.00, 'Não', '05-10-2024', '06-10-2024', '02-10-2024', 2, 2, '111.222.333-44'),
@@ -264,7 +234,6 @@ INSERT INTO pedido (ped_codigo, ped_quantidade, ped_valor_desc, ped_valor_total,
 (9, 80, 2260.44, 2392.00, 'Não', '08-10-2024', '08-10-2024', '04-10-2024', 9, 9, '111.222.333-44'),
 (10, 30, 4580.64, 4797.00, 'Não', '09-10-2024', '09-10-2024', '04-10-2024', 10, 10, '111.222.333-44');
 
--- Registra_compra
 INSERT INTO registra_compra (com_num_cupom_fiscal,fun_cpf) VALUES
 ('CF001', '666.777.888-99'),
 ('CF002', '666.777.888-99'),
@@ -278,5 +247,5 @@ INSERT INTO registra_compra (com_num_cupom_fiscal,fun_cpf) VALUES
 ('CF010', '666.777.888-99');
 
 UPDATE funcionario
-SET fun_cpf_gerente = '111.222.333-44'  -- Este é o CPF do gerente
-WHERE fun_cpf != '111.222.333-44';  -- Atualiza todos exceto o próprio gerente
+SET fun_cpf_gerente = '111.222.333-44'
+WHERE fun_cpf != '111.222.333-44';
