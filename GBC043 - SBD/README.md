@@ -4,7 +4,7 @@
 
 ### Ementa
 * Arquitetura de um sistema de banco de dados
-* Modelos Conceituais de Entidades e Relacionamentos
+* Modelos Conceituais de Entidades e Relacionamentos 
 * Modelo Relacional
 * Linguagem de definição de dados
 * Linguagens de manipulação de dados
