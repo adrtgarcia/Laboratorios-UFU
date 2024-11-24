@@ -11,14 +11,26 @@
 * Análise de agrupamento
 
 ### Laboratórios
-| LAB | Conteúdo |
-|-----|----------|
-| 01 | |
-| 02 | |
-| 03 | |
-| 04 | |
-| 05 | |
-| 06 | |
-| 07 | |
-| 08 | |
-| 09 | |
+| LAB | Conteúdo | Dados |
+|-----|----------|-------|
+| 01 | Introdução ao R | - |
+| 02 | Vetores | - |
+| 03 | Análise de dados | Titanic |
+| 04 | Biblioteca ggplot2 | Titanic |
+| 05 | Modelo da Árvore de Decisão | Iris |
+| 06 | Modelo de classificação | palmerpenguins |
+| 07 | Modelo KNN | Câncer, palmerpenguins |
+| 08 | Árvore de Decisão com rpart e rpart.plot | Câncer |
+| 09 | Floresta de Decisão com randomForest | Câncer, Iris |
+| 10 | Web Scrapping | Wikipédia |
+| 11 | Web Scrapping | Boss Hunting, Time Out |
+| 12 | Web Scrapping | Blaze, Letras |
+| 13 | Web Scrapping | BBC |
+| 14 | Web Scrapping e classificação de palavras | BBC, janeaustenr |
+| 15 | Classificação de sentimentos | janeaustenr |
+| 16 | Teorema de Bayes e classificação de notícias | Notícias |
+| 17 | Coeficiente de correlação, Modelo Linear e Modelo de Correlação | Fêmur, Iris |
+| 18 | Modelo Linear | Grilo, palmerpenguins |
+| 19 | Distribuição normal | - |
+| 20 | Modelo Linear e análise de resíduos | Oysters |
+| 21 | Modelo Linear e Aprendizado Não Supervisionado | Fêmur |
