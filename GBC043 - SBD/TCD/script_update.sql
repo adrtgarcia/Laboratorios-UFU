@@ -8,15 +8,13 @@ UPDATE funcionario
 SET fun_cpf_gerente = '123.456.789-01'
 WHERE fnc_codigo = 3;
 
-#------------------------------------
 
 UPDATE produto 
 SET prd_preco = prd_preco * 1.10 
-WHERE sec_codigo IN 
-( SELECT sec_codigo 
-FROM secao 
-WHERE cat_codigo = ( 
-SELECT cat_codigo 
-FROM categoria 
-WHERE cat_descricao = 'Laticínios' ));
-
+WHERE sec_codigo IN ( 
+  SELECT sec_codigo 
+  FROM secao 
+  WHERE cat_codigo = ( 
+    SELECT cat_codigo 
+    FROM categoria 
+    WHERE cat_descricao = 'Laticínios' ));
