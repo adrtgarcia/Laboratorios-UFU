@@ -1,9 +1,6 @@
 ## Algoritmos e Estruturas de Dados 2
 ![C](https://img.shields.io/badge/C-EE1B3E?style=for-the-badge&logo=c&logoColor=white)
 
-### Objetivos
-Capacitar o aluno a desenvolver soluções computacionais eficientes para problemas que necessitam de algoritmos e/ou estruturas de dados avançadas, discutir o custo computacional de algoritmos, utilizar adequadamente solução iterativa e recursiva, aplicar apropriadamente soluções para problemas de busca e de ordenação e utilizar árvores e grafos.
-
 ### Ementa
 * Recursividade
 * Programação dinâmica
