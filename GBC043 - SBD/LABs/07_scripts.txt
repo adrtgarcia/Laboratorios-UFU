@@ -1,11 +1,3 @@
-LABORAT”RIO SBD - Maria Camila
- 
-Matheus Fiod Saliba - 12221BCC024
-Cau„ de Paula Dias - 12211BCC045
-Amanda Duarte Garcia - 12221BCC031
-Marcos Gabriel Moreira Fonseca - 12221BCC043
-
-
 1)
 SELECT MAX(vr_bem_candidato) AS maximo,MIN(vr_bem_candidato) AS minimo
 FROM candidato can, bem_candidato bem
@@ -19,7 +11,7 @@ WHERE can.sq_candidato = bem.sq_candidato AND
 vr_bem_candidato = (SELECT max(vr_bem_candidato)FROM bem_candidato)
 
 3)
-SELECT avg(vr_bem_candidato) AS mÈdia
+SELECT avg(vr_bem_candidato) AS m√©dia
 FROM candidato can,bem_candidato bem 
 WHERE can.sq_candidato = bem.sq_candidato AND
 nm_candidato = 'JOSE LUIZ DATENA'
@@ -39,7 +31,7 @@ WHERE can.cd_cargo = car.cd_cargo AND
 car.ds_cargo = 'VEREADOR' AND
 gen.cd_genero = can.cd_genero AND
 gen.ds_genero = 'FEMININO' AND
-(nm_ue = 'RIO DE JANEIRO' OR nm_ue = 'S√O PAULO' OR nm_ue = 'VIT”RIA' OR nm_ue = 'BELO HORIZONTE')
+(nm_ue = 'RIO DE JANEIRO' OR nm_ue = 'S√ÉO PAULO' OR nm_ue = 'VIT√ìRIA' OR nm_ue = 'BELO HORIZONTE')
 GROUP BY nm_ue
 
 6)
@@ -53,7 +45,7 @@ WHERE can.cd_genero = gen.cd_genero AND
 gen.ds_genero = 'FEMININO' AND
 can.cd_cargo = car.cd_cargo AND
 car.ds_cargo = 'VEREADOR' AND
-can.nm_ue = 'UBERL¬NDIA' AND
+can.nm_ue = 'UBERL√ÇNDIA' AND
 can.nr_partido = par.nr_partido
 GROUP BY sg_partido
 ORDER BY qtd
@@ -63,7 +55,7 @@ SELECT sg_partido,COUNT(*)
 FROM candidato can, genero gen, partido par
 WHERE can.cd_genero = gen.cd_genero AND
 gen.ds_genero = 'FEMININO' AND
-can.nm_ue = 'S√O PAULO' AND
+can.nm_ue = 'S√ÉO PAULO' AND
 can.nr_partido = par.nr_partido
 GROUP BY sg_partido
 HAVING COUNT(*) > 10
@@ -71,7 +63,7 @@ HAVING COUNT(*) > 10
 9)
 SELECT sg_partido,ds_cor_raca,COUNT(*)
 FROM candidato can, partido par, cor_raca cr
-WHERE can.nm_ue = 'CUIAB¡' AND
+WHERE can.nm_ue = 'CUIAB√Å' AND
 can.nr_partido = par.nr_partido AND
 can.cd_cor_raca = cr.cd_cor_raca
 GROUP BY sg_partido, ds_cor_raca
@@ -90,7 +82,7 @@ HAVING COUNT(*) >= ALL (SELECT COUNT(*) as qtd
 
 11)
 
-Qual o partido polÌtico com a maior quantidade de candidatos na cidade de 'CACONDE'.
+Qual o partido pol√≠tico com a maior quantidade de candidatos na cidade de 'CACONDE'.
 
 SELECT sg_partido,COUNT(*)
 FROM candidato can, partido par
@@ -110,8 +102,8 @@ HAVING COUNT(*) >= ALL (SELECT COUNT(*) as qtd
 
 ---------------------
 
-Quantas candidatas do gÍnero feminino est„o concorrendo ao cargo de prefeito por partido 
-polÌtico na cidade de 'RIBEIR√O PRETO'. Devem ser exibidos no resultado a sigla do partido e a 
+Quantas candidatas do g√™nero feminino est√£o concorrendo ao cargo de prefeito por partido 
+pol√≠tico na cidade de 'RIBEIR√ÉO PRETO'. Devem ser exibidos no resultado a sigla do partido e a 
 quantidade. 
 
 SELECT sg_partido,COUNT(*) as qtd
@@ -120,7 +112,7 @@ WHERE can.cd_genero = gen.cd_genero AND
 gen.ds_genero = 'FEMININO' AND
 can.cd_cargo = car.cd_cargo AND
 car.ds_cargo = 'PREFEITO' AND
-can.nm_ue = 'RIBEIR√O PRETO' AND
+can.nm_ue = 'RIBEIR√ÉO PRETO' AND
 can.nr_partido = par.nr_partido
 GROUP BY sg_partido
 ORDER BY qtd
