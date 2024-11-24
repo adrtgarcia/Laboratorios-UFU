@@ -1,5 +1,7 @@
-## Programação Funcional
+## Programação Orientada a Objetos 1
 ![Java](https://img.shields.io/badge/java-1E76B8.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![SQL](https://img.shields.io/badge/sql-7C2E87.svg?style=for-the-badge&logo=sql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgres-7A0434.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Ementa
 * Introdução dos conceitos fundamentais da programação orientada a objetos: classes, objetos, encapsulamento, herança e polimorfismo
