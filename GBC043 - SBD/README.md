@@ -20,8 +20,9 @@
 ### Laboratórios
 | LAB | Conteúdo |
 |-----|----------|
-| 06 | SQL DML |
-| 07 | SQL DML |
-| 08 | SQL DML |
-| 09 | Procedimentos armazenados e gatilhos |
-| 10 | Transações |
+| 06 | SQL DML simples |
+| 07 | SQL DML avançado |
+| 08 | SQL DML avançado |
+
+[//]: <| 09 | Procedimentos armazenados e gatilhos |>
+[//]: <| 10 | Transações |>
