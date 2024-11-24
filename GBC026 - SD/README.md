@@ -1,9 +1,6 @@
 ## Sistemas Digitais
 ![VHDL](https://img.shields.io/badge/vhdl-F5712A?style=for-the-badge&logo=vhdl&logoColor=white)
 
-### Objetivos
-Introduzir os princípios e técnicas de sistemas digitais modernos, ensinando os princípios fundamentais dos sistemas digitais e tratando de modo abrangente os métodos tradicionais e modernos de aplicação dos sistemas digitais e técnicas digitais de desenvolvimento. Fundamentar o aluno para o entendimento do funcionamento dos computadores atuais apresentando os aspectos de hardware.
-
 ### Ementa
 * Sistemas de representação numérica e operações
 * Representação de números binários em ponto fixo e em ponto flutuante
