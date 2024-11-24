@@ -1,18 +1,5 @@
 ## Programação Lógica
-![Prolog](https://img.shields.io/badge/C-08A953?style=for-the-badge&logo=c&logoColor=white)
-
-[//]: < #DE3373 Rosa >
-[//]: < #FCCA28 Amarelo >
-[//]: < #08A953 Verde >
-[//]: < #F5712A Laranja >
-[//]: < #F59EAF Rosa pastel >
-[//]: < #EE1B3E Vermelho >
-[//]: < #1E76B8 Azul >
-[//]: < #7C2E87 Roxo >
-[//]: < #7A0434 Vinho >
-[//]: < #F98F81 Pêssego >
-[//]: < #37BA9B Verde água >
-[//]: < #C0C2C2 Cinza >
+![Prolog](https://img.shields.io/badge/Prolog-F5712A?style=for-the-badge&logo=prolog&logoColor=white)
 
 ### Objetivos
 Assimilar os principais conceitos do paradigma de Programação em Lógica, aprender a linguagem Prolog e desenvolver programas usando o paradigma de Programação em Lógica.
@@ -32,14 +19,9 @@ Assimilar os principais conceitos do paradigma de Programação em Lógica, apre
 ### Laboratórios
 | LAB | Conteúdo |
 |-----|----------|
-| 01 | E/S, variáveis e expressões |
-| 02 | Condicionais |
-| 03 | Laços |
-| 04 | Funções |
-| 05 | Vetores uni-dimensionais e strings |
-| 06 | Estruturas |
-| 07 | Exercício extra: Função fgets() |
-| 08 | Ponteiros |
-| 09 | Memória dinâmica |
-| 10 | Arquivos |
-| 11 | Exercícios de revisão |
+| 01 | Introdução ao Prolog |
+| 02 | Aritmética, comparações e E/S|
+| 03 | Recursão |
+| 04 | Estruturas |
+| 05 | Listas |
+| 06 | Loops |
