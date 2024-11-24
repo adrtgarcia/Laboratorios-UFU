@@ -1,9 +1,6 @@
 ## Programação Procedimental
 ![C](https://img.shields.io/badge/C-DE3373?style=for-the-badge&logo=c&logoColor=white)
 
-### Objetivos
-Capacitar o aluno a desenvolver programas em linguagens procedimentais, empregando adequadamente os recursos oferecidos por estas linguagens.
-
 ### Ementa
 * Noções de Lógica
 * Introdução a Algoritmos
