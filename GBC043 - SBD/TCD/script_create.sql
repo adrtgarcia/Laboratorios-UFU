@@ -1,15 +1,15 @@
-
-
 CREATE SCHEMA hipermercado
 SET search_path TO hipermercado
 SET datestyle TO DMY
 
-CREATE TABLE categoria
+
+CREATE TABLE categoria 
 (
   cat_codigo INT NOT NULL,
   cat_descricao VARCHAR NOT NULL,
   PRIMARY KEY (cat_codigo)
 );
+
 
 CREATE TABLE secao
 (
@@ -17,8 +17,7 @@ CREATE TABLE secao
   sec_nome VARCHAR NOT NULL,
   cat_codigo INT NOT NULL,
   PRIMARY KEY (sec_codigo),
-  FOREIGN KEY (cat_codigo) 
-  	REFERENCES categoria(cat_codigo)
+  FOREIGN KEY (cat_codigo) REFERENCES categoria(cat_codigo)
 );
 
 
@@ -34,9 +33,9 @@ CREATE TABLE produto
   prd_qnt_estoque INT NOT NULL,
   sec_codigo INT NOT NULL,
   PRIMARY KEY (prd_nro_cadastro),
-  FOREIGN KEY (sec_codigo) 
-REFERENCES secao(sec_codigo)
+  FOREIGN KEY (sec_codigo) REFERENCES secao(sec_codigo)
 );
+
 
 CREATE TABLE promocao
 (
@@ -84,17 +83,16 @@ CREATE TABLE diamante
   dia_gasto_minimo FLOAT NOT NULL,
   cli_cpf VARCHAR NOT NULL,
   PRIMARY KEY (cli_cpf),
-  FOREIGN KEY (cli_cpf) 
-REFERENCES cliente(cli_cpf)
+  FOREIGN KEY (cli_cpf) REFERENCES cliente(cli_cpf)
 );
+
 
 CREATE TABLE ouro
 (
   our_gasto_minimo FLOAT NOT NULL,
   cli_cpf VARCHAR NOT NULL,
   PRIMARY KEY (cli_cpf),
-  FOREIGN KEY (cli_cpf) 
-REFERENCES cliente(cli_cpf)
+  FOREIGN KEY (cli_cpf) REFERENCES cliente(cli_cpf)
 );
 
 
@@ -103,8 +101,7 @@ CREATE TABLE prata
   pra_gasto_minimo FLOAT NOT NULL,
   cli_cpf VARCHAR NOT NULL,
   PRIMARY KEY (cli_cpf),
-  FOREIGN KEY (cli_cpf) 
-REFERENCES cliente(cli_cpf)
+  FOREIGN KEY (cli_cpf) REFERENCES cliente(cli_cpf)
 );
 
 
@@ -114,10 +111,8 @@ CREATE TABLE oferece_produto
   for_nro_cadastro INT NOT NULL,
   prd_nro_cadastro INT NOT NULL,
   PRIMARY KEY (for_nro_cadastro, prd_nro_cadastro),
-  FOREIGN KEY (for_nro_cadastro) 
-REFERENCES fornecedor(for_nro_cadastro),
-  FOREIGN KEY (prd_nro_cadastro) 
-REFERENCES produto(prd_nro_cadastro)
+  FOREIGN KEY (for_nro_cadastro) REFERENCES fornecedor(for_nro_cadastro),
+  FOREIGN KEY (prd_nro_cadastro) REFERENCES produto(prd_nro_cadastro)
 );
 
 
@@ -126,8 +121,7 @@ CREATE TABLE fornecedor_telefone
   for_telefone VARCHAR NOT NULL,
   for_nro_cadastro INT NOT NULL,
   PRIMARY KEY (for_telefone, for_nro_cadastro),
-  FOREIGN KEY (for_nro_cadastro) 
-REFERENCES fornecedor(for_nro_cadastro)
+  FOREIGN KEY (for_nro_cadastro) REFERENCES fornecedor(for_nro_cadastro)
 );
 
 
@@ -136,8 +130,7 @@ CREATE TABLE cliente_endereco
   cli_endereco_entrega VARCHAR NOT NULL,
   cli_cpf VARCHAR NOT NULL,
   PRIMARY KEY (cli_endereco_entrega, cli_cpf),
-  FOREIGN KEY (cli_cpf) 
-REFERENCES cliente(cli_cpf)
+  FOREIGN KEY (cli_cpf) REFERENCES cliente(cli_cpf)
 );
 
 
@@ -146,9 +139,9 @@ CREATE TABLE cliente_telefone
   cli_telefone VARCHAR NOT NULL,
   cli_cpf VARCHAR NOT NULL,
   PRIMARY KEY (cli_telefone, cli_cpf),
-  FOREIGN KEY (cli_cpf) 
-REFERENCES cliente(cli_cpf)
+  FOREIGN KEY (cli_cpf) REFERENCES cliente(cli_cpf)
 );
+
 
 CREATE TABLE compra
 (
@@ -160,10 +153,8 @@ CREATE TABLE compra
   com_num_cupom_fiscal VARCHAR NOT NULL,
   cli_cpf VARCHAR NOT NULL,
   PRIMARY KEY (com_num_cupom_fiscal),
-  FOREIGN KEY (cli_cpf) 
-REFERENCES cliente(cli_cpf)
+  FOREIGN KEY (cli_cpf) REFERENCES cliente(cli_cpf)
 );
-
 
 
 CREATE TABLE funcionario_funcao
@@ -172,7 +163,6 @@ CREATE TABLE funcionario_funcao
   fnc_nome VARCHAR NOT NULL,
   PRIMARY KEY (fnc_codigo)
 );
-
 
  
 CREATE TABLE realiza_compra
@@ -183,13 +173,11 @@ CREATE TABLE realiza_compra
   com_num_cupom_fiscal VARCHAR NOT NULL,
   cli_cpf VARCHAR NOT NULL,
   PRIMARY KEY (prd_nro_cadastro, cli_cpf),
-  FOREIGN KEY (prd_nro_cadastro) 
-REFERENCES produto(prd_nro_cadastro),
-  FOREIGN KEY (com_num_cupom_fiscal) 
-REFERENCES compra(com_num_cupom_fiscal),
-  FOREIGN KEY (cli_cpf) 
-REFERENCES cliente(cli_cpf)
+  FOREIGN KEY (prd_nro_cadastro) REFERENCES produto(prd_nro_cadastro),
+  FOREIGN KEY (com_num_cupom_fiscal) REFERENCES compra(com_num_cupom_fiscal),
+  FOREIGN KEY (cli_cpf) REFERENCES cliente(cli_cpf)
 );
+
 
 CREATE TABLE funcionario
 (
@@ -208,8 +196,7 @@ CURRENT_DATE - INTERVAL '18 years'),
   fun_cpf_gerente VARCHAR,
   fnc_codigo INT NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fnc_codigo) 
-REFERENCES funcionario_funcao(fnc_codigo)
+  FOREIGN KEY (fnc_codigo) REFERENCES funcionario_funcao(fnc_codigo)
 );
  
 
@@ -219,14 +206,12 @@ CREATE TABLE gerente
   ger_formacao_basica VARCHAR NOT NULL,
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES funcionario(fun_cpf)
+  FOREIGN KEY (fun_cpf) REFERENCES funcionario(fun_cpf)
 );
 
 
 ALTER TABLE funcionario
-ADD FOREIGN KEY (fun_cpf_gerente) 
-REFERENCES gerente(fun_cpf);
+ADD FOREIGN KEY (fun_cpf_gerente) REFERENCES gerente(fun_cpf);
 
 
 CREATE TABLE pedido
@@ -243,26 +228,20 @@ CREATE TABLE pedido
   prd_nro_cadastro INT NOT NULL,
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (ped_codigo),
-  FOREIGN KEY (for_nro_cadastro) 
-REFERENCES fornecedor(for_nro_cadastro),
-  FOREIGN KEY (prd_nro_cadastro) 
-REFERENCES produto(prd_nro_cadastro),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES gerente(fun_cpf),
+  FOREIGN KEY (for_nro_cadastro) REFERENCES fornecedor(for_nro_cadastro),
+  FOREIGN KEY (prd_nro_cadastro) REFERENCES produto(prd_nro_cadastro),
+  FOREIGN KEY (fun_cpf) REFERENCES gerente(fun_cpf),
   CHECK (ped_data_previsao >= ped_data_emissao),
   CHECK (ped_data_entrega >= ped_data_emissao)
 );
-
 
 
 CREATE TABLE empacotador
 (
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES funcionario(fun_cpf)
+  FOREIGN KEY (fun_cpf) REFERENCES funcionario(fun_cpf)
 );
-
 
 
 CREATE TABLE marketing
@@ -271,8 +250,7 @@ CREATE TABLE marketing
   mar_formacao_basica VARCHAR NOT NULL,
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES funcionario(fun_cpf)
+  FOREIGN KEY (fun_cpf) REFERENCES funcionario(fun_cpf)
 );
 
 
@@ -282,36 +260,33 @@ CREATE TABLE propaganda
   pro_codigo INT NOT NULL,
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (prd_nro_cadastro, pro_codigo),
-  FOREIGN KEY (prd_nro_cadastro) 
-REFERENCES produto(prd_nro_cadastro),
-  FOREIGN KEY (pro_codigo) 
-REFERENCES promocao(pro_codigo),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES marketing(fun_cpf)
+  FOREIGN KEY (prd_nro_cadastro) REFERENCES produto(prd_nro_cadastro),
+  FOREIGN KEY (pro_codigo) REFERENCES promocao(pro_codigo),
+  FOREIGN KEY (fun_cpf) REFERENCES marketing(fun_cpf)
 );
+
 
 CREATE TABLE atendente_padaria
 (
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES funcionario(fun_cpf)
+  FOREIGN KEY (fun_cpf) REFERENCES funcionario(fun_cpf)
 );
+
 
 CREATE TABLE faxineiro
 (
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES funcionario(fun_cpf)
+  FOREIGN KEY (fun_cpf) REFERENCES funcionario(fun_cpf)
 );
+
 
 CREATE TABLE atendente_caixa
 (
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES funcionario(fun_cpf)
+  FOREIGN KEY (fun_cpf) REFERENCES funcionario(fun_cpf)
 );
 
 
@@ -320,18 +295,16 @@ CREATE TABLE registra_compra
   com_num_cupom_fiscal VARCHAR NOT NULL,
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (com_num_cupom_fiscal, fun_cpf),
-  FOREIGN KEY (com_num_cupom_fiscal) 
-REFERENCES compra(com_num_cupom_fiscal),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES atendente_caixa(fun_cpf)
+  FOREIGN KEY (com_num_cupom_fiscal) REFERENCES compra(com_num_cupom_fiscal),
+  FOREIGN KEY (fun_cpf) REFERENCES atendente_caixa(fun_cpf)
 );
+
 
 CREATE TABLE repositor
 (
   fun_cpf VARCHAR NOT NULL,
   PRIMARY KEY (fun_cpf),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES funcionario(fun_cpf)
+  FOREIGN KEY (fun_cpf) REFERENCES funcionario(fun_cpf)
 );
 
 
@@ -340,11 +313,10 @@ CREATE TABLE responsavel_secao
   fun_cpf VARCHAR NOT NULL,
   sec_codigo INT NOT NULL,
   PRIMARY KEY (fun_cpf, sec_codigo),
-  FOREIGN KEY (fun_cpf) 
-REFERENCES repositor(fun_cpf),
-  FOREIGN KEY (sec_codigo) 
-REFERENCES secao(sec_codigo)
+  FOREIGN KEY (fun_cpf) REFERENCES repositor(fun_cpf),
+  FOREIGN KEY (sec_codigo) REFERENCES secao(sec_codigo)
 );
+
 
 CREATE TABLE esta_incluido
 (
