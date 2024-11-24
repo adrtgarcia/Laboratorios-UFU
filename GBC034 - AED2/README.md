@@ -23,7 +23,7 @@ Capacitar o aluno a desenvolver soluções computacionais eficientes para proble
 | 01 | Ordenação: BubbleSort, InsertionSort, SelectionSort, ShellSort |
 | 02 | Ordenação: BubbleSort, ShellSort, MergeSort |
 | 03 | Ordenação: ShellSort, HeapSort |
-| 04 | - |
+| 04 | Ordenação: QuickSort e suas variações |
 | 05 | Busca Binária em vetor |
 | 06 | Árvores Binárias de Pesquisa |
-| 07 | - |
+| 07 | Hashing |
