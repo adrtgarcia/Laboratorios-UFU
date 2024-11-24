@@ -23,6 +23,12 @@ Ao final do curso, o aluno deverá ser capaz de discutir sobre os conceitos envo
 ### Laboratórios
 | LAB | Conteúdo |
 |-----|----------|
-| 01 | - |
-| 02 | - |
-| 03 | - |
+| 01 | Introdução à Programação Funcional |
+| 02 | Elementos não-funcionais |
+| 03 | E/S e arquivos |
+| 04 | Recursão |
+| 05 | Tuplas |
+| 06 | Listas |
+| 07 | Classes |
+| 08 | Generalização |
+| 09 | Cálculo Lambda |
