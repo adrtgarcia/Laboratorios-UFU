@@ -1,11 +1,3 @@
-LAB 8 SQL DML - Maria Camila
-
-Matheus Fiod Saliba - 12221BCC024
-Marcos Gabriel Moreira Fonseca - 12221BCC043
-Cauã de Paula Dias - 12211BCC045
-Amanda Duarte Garcia - 12221BCC031
-
-
 EXERCÍCIO 1
 
 a)
