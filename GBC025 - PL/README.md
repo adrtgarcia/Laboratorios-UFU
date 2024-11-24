@@ -1,5 +1,5 @@
 ## Programação Lógica
-![Prolog](https://img.shields.io/badge/Prolog-F5712A?style=for-the-badge&logo=prolog&logoColor=white)
+![Prolog](https://img.shields.io/badge/Prolog-08A953?style=for-the-badge&logo=prolog&logoColor=white)
 
 ### Objetivos
 Assimilar os principais conceitos do paradigma de Programação em Lógica, aprender a linguagem Prolog e desenvolver programas usando o paradigma de Programação em Lógica.
