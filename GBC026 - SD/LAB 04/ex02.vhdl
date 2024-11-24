@@ -7,7 +7,7 @@ entity numOnes is
     a, b, c, d : in std_logic;
     s0, s1, s2 : out std_logic
   );
-end entity parityEven;
+end entity numOnes;
 
 architecture a_no of numOnes is
 begin
