@@ -3,7 +3,7 @@
 ![PostgreSQL](https://img.shields.io/badge/postgres-DE3373.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### Ementa
-* Arquitetura de um sistema de banco de dados
+* Arquitetura de um sistema de banco de dados 
 * Modelos Conceituais de Entidades e Relacionamentos 
 * Modelo Relacional
 * Linguagem de definição de dados
