@@ -167,6 +167,9 @@ public class JanelaLivro extends JFrame {
 		painel.add(botaoIncluir);
 		painel.add(botaoRevistas);
 		painel.add(botaoListagem);
+
+janela.setVisible(true);
+janela.getContentPane().add(painel);
 		
 		// tratamento dos botões
 		botaoIncluir.addActionListener(new ActionListener() {
