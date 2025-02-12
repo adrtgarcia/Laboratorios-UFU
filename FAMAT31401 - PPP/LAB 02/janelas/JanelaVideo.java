@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 // ALTERAÇÃO: criada nova classe JanelaVideo
+// TODO: programação não encerra no x
 
 @SuppressWarnings("serial")
 public class JanelaVideo extends JFrame implements ActionListener {
