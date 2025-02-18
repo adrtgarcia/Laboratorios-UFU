@@ -13,3 +13,4 @@
 | LAB | Conteúdo |
 |-----|----------|
 | 01 | Uso de GUIs |
+| 02 | Princípios DRY e SOLID |
