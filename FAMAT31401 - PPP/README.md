@@ -14,3 +14,5 @@
 |-----|----------|
 | 01 | Uso de GUIs |
 | 02 | Princípios DRY e SOLID |
+| 03 | Bad Smells |
+| 04 | Refactoring |
