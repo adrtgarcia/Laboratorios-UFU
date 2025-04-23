@@ -16,3 +16,9 @@
 | 02 | Princípios DRY e SOLID |
 | 03 | Bad Smells |
 | 04 | Refactoring |
+| 05 | API JDBC |
+| 06 | API Threads |
+| 07 | Fábrica Abstrata |
+| 08 | Composite |
+| 09 | Observer |
+| 10 |  |
