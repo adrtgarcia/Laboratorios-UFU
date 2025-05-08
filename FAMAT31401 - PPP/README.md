@@ -21,4 +21,4 @@
 | 07 | Fábrica Abstrata |
 | 08 | Composite |
 | 09 | Observer |
-| 10 |  |
+| 10 | Visitor |
