@@ -4,7 +4,7 @@ import windows.WinFactory;
 import macos.MacFactory;
 import linux.LinFactory;
 
-public class Main {
+public class MainV2 {
    public static void main(String[] args) {
        GUIFactory factory;
 
