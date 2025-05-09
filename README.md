@@ -15,4 +15,6 @@ Repositório para aulas práticas de programação do curso de Ciência da Compu
 | GBC036 | Arquitetura e Organização de Computadores 1 | Assembly |
 | FAMAT31041 | Estatística Computacional | R |
 | GBC043 | Sistemas de Banco de Dados | SQL |
+| GBC052 | Análise de Algoritmos | JavaScript, Python | 
+| GBC053 | Gerenciamento de Banco de Dados | C, SQL |
 | FAMAT31401 | Princípios e Padrões de Projeto | Java |
