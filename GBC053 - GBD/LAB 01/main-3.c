@@ -1,19 +1,10 @@
-/*
-
-ALUNOS: Amanda Duarte Garcia - 12221BCC031
-        Caua de Paula Dias - 12211BCC045
-
-EX03: Õndice Ordenado e Busca Bin·ria
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 typedef struct registro { long long chave; char nome[100]; time_t nascimento; } registro;
 
-// FunÁ„o para busca bin·ria
+// Fun√ß√£o para busca bin√°ria
 int busca_binaria(long long numregistros, char *nome_busca) {
     FILE *fd = NULL, *fi = NULL;
     registro r;
@@ -99,7 +90,7 @@ int main() {
     }
     printf("Leitura concluida.\n\n");
 
-    // Ordenando os nomes em ordem alfabÈtica
+    // Ordenando os nomes em ordem alfab√©tica
     printf("\nIniciando ordenacao...\n");
     for(long long i = 0; i < numregistros; i++) {
         fread(&r, sizeof(registro), 1, f);
@@ -122,7 +113,7 @@ int main() {
         return 1;
     }
 
-    // Escrevendo o arquivo indices.bin a partir da ordenaÁ„o feita
+    // Escrevendo o arquivo indices.bin a partir da ordena√ß√£o feita
     printf("Adicionando indices no arquivo...\n");
     for(long long i = 0; i < numregistros; i++) {
         fwrite(&registros[i].chave, sizeof(long long), 1, f);
@@ -131,7 +122,7 @@ int main() {
     fclose(fi);
     printf("Arquivo de indices pronto.\n\n");
 
-    // Chamando a busca bin·ria
+    // Chamando a busca bin√°ria
     printf("Digite o nome a ser buscado: ");
     fgets(nome_busca, 100, stdin);
     nome_busca[strcspn(nome_busca, "\n")] = '\0';
