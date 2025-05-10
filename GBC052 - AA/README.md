@@ -1,6 +1,6 @@
 ## Análise de Algoritmos
-![JavaScritp](https://img.shields.io/badge/JavaScript-08A953?style=for-the-badge&logo=javascript&logoColor=white)
-![Python](https://img.shields.io/badge/python-F5712A?style=for-the-badge&logo=python&logoColor=white)
+![JavaScritp](https://img.shields.io/badge/JavaScript-FCCA28?style=for-the-badge&logo=javascript&logoColor=white)
+![Python](https://img.shields.io/badge/python-08A953?style=for-the-badge&logo=python&logoColor=white)
 
 ### Ementa
 * Elementos de análise assintótica (Notações assintóticas Ο, Ω, Θ)
