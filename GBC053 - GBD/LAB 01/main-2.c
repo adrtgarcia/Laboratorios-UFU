@@ -1,12 +1,3 @@
-/*
-
-ALUNOS: Amanda Duarte Garcia - 12221BCC031
-        Caua de Paula Dias - 12211BCC045
-
-EX02: Busca Sequencial e Busca por Posição
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
