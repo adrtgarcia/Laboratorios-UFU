@@ -1,5 +1,5 @@
 ## Princípios e Padrões de Projeto
-![Java](https://img.shields.io/badge/java-FCCA28?style=for-the-badge&logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/java-EE1B3E?style=for-the-badge&logo=openjdk&logoColor=white)
 
 ### Ementa
 * Conceitos avançados de programação orientada a objetos
