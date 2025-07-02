@@ -7,4 +7,4 @@
 ### Laboratórios
 | LAB | Conteúdo |
 |-----|----------|
-| 01 | Cadeias de Markov |
+| 01 | Simulação de Monte Carlos em Cadeias de Markov |
