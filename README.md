@@ -18,3 +18,4 @@ Repositório para aulas práticas de programação do curso de Ciência da Compu
 | GBC052 | Análise de Algoritmos | JavaScript, Python | 
 | GBC053 | Gerenciamento de Banco de Dados | C, SQL |
 | FACOM31401 | Princípios e Padrões de Projeto | Java |
+| GBC065 | Modelagem e Simulação | Python |
