@@ -14,4 +14,5 @@
 ### Laboratórios
 | LAB | Conteúdo |
 |-----|----------|
-| 01 | Simulação de Monte Carlos em Cadeias de Markov |
+| 01 | Simulação de Monte Carlo em Cadeias de Markov |
+| 02 | Simulação de Monte Carlo em Cadeias de Markov e Processos de Bernoulli |
