@@ -16,3 +16,5 @@
 |-----|----------|
 | 01 | Simulação de Monte Carlo em Cadeias de Markov |
 | 02 | Simulação de Monte Carlo em Cadeias de Markov e Processos de Bernoulli |
+| 03 | CMTC - Markov Contínuo |
+| 04 | Teoria de Filas |
